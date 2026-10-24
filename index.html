@@ -6,8 +6,8 @@
 pre{background:#f5f5f5;padding:16px;overflow:auto;white-space:pre}img{max-width:100%}figure{margin:24px 0}
 blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{background:#f2f2f2;padding:1px 4px}</style>
 </head><body>
-<p>VERİ BİLİMİ NOTLARI  ·  100 GÜNLÜK KAMP</p>
 <h1>Sıfırdan Sahaya Veri Bilimi: NumPy, Pandas, Görselleştirme, EDA ve Feature Engineering Rehberi</h1>
+<p>VERİ BİLİMİ NOTLARI  ·  100 GÜNLÜK KAMP</p>
 <p><em>Kod, çıktı ve görsellerle; testlerde, mülakatlarda ve gerçek projelerde işime yarayacak her şey tek yazıda.</em></p>
 <p><strong>Kaynak:</strong> Bu yazıdaki notlar, Udemy&#x27;deki Atıl Samancıoğlu&#x27;nun &quot;Veri Bilimi ve Makine Öğrenmesi&quot; kursundan alınmıştır.</p>
 <p><strong>Kapsam:</strong> Gün 25 – 35 (NumPy, Pandas, Matplotlib, Seaborn, EDA, Feature Engineering, Google Play Store uygulaması)</p>
@@ -38,213 +38,213 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <h3>2.1 Liste mi, dizi mi?</h3>
 <p>Python'da nasıl listeler varsa NumPy ile de <strong>dizi (array)</strong> oluşturulabilir. NumPy'a başlarken öğrenilecek ilk şey dizi oluşturmaktır.</p>
 <p>Diziler, listelere göre <strong>daha sıkı kuralları olan ama indeks mantığını koruyan</strong> veri yapılarıdır. Örneğin listelere eleman ekleyip kapasitelerini genişletebiliriz; dizilerde bu mümkün değildir.</p>
-<pre>import numpy as np<br><br>my_list = [10, 20, 30, 40, 50]<br>type(my_list)                 # list<br><br>my_array = np.array(my_list)  # array([10, 20, 30, 40, 50])<br>type(my_array)                # numpy.ndarray</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_001.png" alt=""></figure>
+<pre>import numpy as np<br>my_list = [10, 20, 30, 40, 50]<br>type(my_list)                 # list<br>my_array = np.array(my_list)  # array([10, 20, 30, 40, 50])<br>type(my_array)                # numpy.ndarray</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_001.png" alt=""></figure>
 <p><em>Listeyi NumPy dizisine çevirmek</em></p>
 <p>NumPy'ın listelerden çok daha fazla fonksiyonu var. Jupyter'de nesnenin ardından nokta koyup TAB'a basarak tüm metotları görebilirsiniz; parametrelerine bakmak için fonksiyonun içinde <strong>Shift + TAB</strong> kullanılır.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_002.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_002.png" alt=""></figure>
 <p><em>my_numpy_array. yazıp TAB'a basınca gelen metotlar</em></p>
 <h3>2.2 Hazır fonksiyonlar: max, ones, zeros, random</h3>
 <p>Daha önce "maksimumunu bul" diye bir metodumuz yoktu; dizide <code>max()</code> doğrudan çalışır. Ayrıca içi birlerle, sıfırlarla veya rastgele sayılarla dolu dizi üretmek tek satırdır.</p>
 <pre>my_array.max()          # 50<br>np.ones(5)              # array([1., 1., 1., 1., 1.])<br>np.zeros(5)             # array([0., 0., 0., 0., 0.])<br>np.random.random(5)     # 5 adet 0-1 arası rastgele sayı</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_003.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_004.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_005.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_006.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_003.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_004.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_005.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_006.png" alt=""></figure>
 <h3>2.3 arange, linspace ve rastgele sayı üreticileri</h3>
 <p><code>np.arange</code>, listelerdeki <code>range</code> fonksiyonunun işlevini görür; <strong>tamamen aynı şekilde</strong> kullanılır (başlangıç, bitiş, adım). Farkı, sonucun NumPy dizisi olmasıdır.</p>
 <pre>list(range(0, 10))      # [0, 1, ..., 9]<br>np.arange(0, 10)        # array([0, 1, ..., 9])<br>np.arange(0, 20, 2)     # array([ 0,  2,  4, ..., 18])</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_007.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_007.png" alt=""></figure>
 <p><em>range ve arange karşılaştırması</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_008.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_008.png" alt=""></figure>
 <p><em>Dizi indeksleme: ilk eleman [0], son eleman [-1]</em></p>
 <p><code>np.linspace(başlangıç, bitiş, adet)</code> ise verdiğiniz aralığı <strong>eşit aralıklı</strong> noktalara böler. Grafik çizerken x ekseni için çok kullanılır (Matplotlib bölümünde göreceğiz).</p>
 <pre>np.linspace(0, 10, 20)   # 0 ile 10 arasında eşit aralıklı 20 sayı</pre>
 <p><code>np.random</code> altında da çok sayıda fonksiyon var. <code>randn</code> standart normal dağılımdan sayı üretir (n boyutlu dizi oluşturur), <code>randint</code> ise rastgele tam sayı üretir.</p>
 <pre>np.random.randn(4)             # 4 elemanlı<br>np.random.randn(4, 4)          # 4x4 matris<br>np.random.randint(1, 300, 5)   # 1 ile 300 arasında 5 tam sayı</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_009.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_009.png" alt=""></figure>
 <p><em>randn ile 1 boyutlu ve 2 boyutlu rastgele diziler</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_010.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_010.png" alt=""></figure>
 <p><em>randint: 1 ile 300 arasında 5 tam sayı</em></p>
 <h3>2.4 Dizi aritmetiği: Liste ile farkı</h3>
 <p>Dizileri toplama işlemi listelerden farklıdır. Listelerde <code>+</code> operatörü string'lerde olduğu gibi <strong>yan yana yazar</strong> (birleştirir). NumPy dizilerinde ise <strong>aynı hizadaki elemanlar birbiriyle toplanır</strong>. Toplama kadar çıkarma, çarpma ve bölme de yapılabilir.</p>
-<pre>my_list1 = [1, 2]<br>my_list2 = [2, 3]<br>my_list1 + my_list2                 # [1, 2, 2, 3]   -&gt; birleştirir<br><br>my_array1 = np.array(my_list1)<br>my_array2 = np.array(my_list2)<br>my_array1 + my_array2               # array([3, 5])   -&gt; eleman eleman toplar<br><br>my_array1 * 5                       # array([ 5, 10])<br>my_list1 * 5                        # [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]  -&gt; listeyi tekrarlar!</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_011.png" alt=""></figure>
+<pre>my_list1 = [1, 2]<br>my_list2 = [2, 3]<br>my_list1 + my_list2                 # [1, 2, 2, 3]   -&gt; birleştirir<br>my_array1 = np.array(my_list1)<br>my_array2 = np.array(my_list2)<br>my_array1 + my_array2               # array([3, 5])   -&gt; eleman eleman toplar<br>my_array1 * 5                       # array([ 5, 10])<br>my_list1 * 5                        # [1, 2, 1, 2, 1, 2, 1, 2, 1, 2]  -&gt; listeyi tekrarlar!</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_011.png" alt=""></figure>
 <p><em>Liste toplama (birleştirme) ile dizi toplama (eleman eleman) farkı</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_012.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_012.png" alt=""></figure>
 <p><em>Diziyi 5 ile çarpmak ile listeyi 5 ile çarpmak</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_013.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_013.png" alt=""></figure>
 <p><em>data + ones = eleman eleman toplama</em></p>
 <h3>2.5 Broadcasting: Boyutlar Uyuşmadığında Ne Olur?</h3>
 <p>İki dizinin boyutları farklıysa işlem her zaman yapılamaz. Notlardaki kural şu: işlemin yapılabilmesi için <strong>ya dizi boyutları aynı olmalı ya da çarpılacak/toplanacak taraf tek boyutlu olmalı</strong> (yukarıda 5 ile çarpmak gibi). Bu kuralın adı <strong>broadcasting</strong>'dir: tek bir değer veya tek satır/sütun, sanki her satır ve kolonda varmış gibi "yayılarak" işleme girer.</p>
 <pre>first_array = np.array([[10, 20], [30, 40]])   # şekil (2, 2)<br>third_array = np.array([[50, 60]])             # şekil (1, 2)  -&gt; tek satır, satırlara yayılır<br>first_array + third_array<br># array([[ 60,  80],<br>#        [ 80, 100]])</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_014.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_015.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_014.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_015.png" alt=""></figure>
 <p><em>Broadcasting: tek satır, her satıra yayılır</em></p>
 <p>Şekilleri uyuşmayan diziler ise hata verir:</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_016.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_016.png" alt=""></figure>
 <p><em>ValueError: operands could not be broadcast together with shapes (2,2) (1,5)</em></p>
 <p>Peki tek <strong>kolonlu</strong> bir matris olsaydı? Bu durumda üstteki satırlara 10, alttaki satırlara 20 eklenirdi. <code>.shape</code> ile şekli kontrol etmek bu tür hataları önlemenin en kolay yoludur.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_017.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_017.png" alt=""></figure>
 <p><em>Şekli (2,1) olan dizi, (2,2) diziyle toplanabilir</em></p>
 <blockquote><strong>DİKKAT:</strong> "Boyutlar uyuşmuyor" hatasını gördüğünüzde ilk yapacağınız şey iki dizinin <code>.shape</code> değerini yazdırmaktır. Veri bilimi kodunda hataların çoğu, şeklin sandığınızdan farklı çıkmasından kaynaklanır.</blockquote>
 <h3>2.6 İndeksleme ve dilimleme (slicing)</h3>
 <p>NumPy dizilerini, Python listelerini dilimlediğimiz <strong>tüm yollarla</strong> indeksleyebilir ve dilimleyebiliriz: <code>data[0]</code>, <code>data[1]</code>, <code>data[0:2]</code>, <code>data[1:]</code>.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_018.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_018.png" alt=""></figure>
 <p><em>NumPy indeksleme ve dilimleme</em></p>
 <h3>2.7 Matrisler</h3>
 <p><strong>Matris</strong>, sayı topluluğudur. Python eğitiminde "liste içinde liste" olarak görülmüştü; aşağıdaki liste örneği de bir matristir. Matrisler <strong>satır (row) ve kolon (column)</strong> olarak ele alınır. Örneğin 3 satır 2 kolonluk bir yapının şekli <strong>(3, 2)</strong>'dir.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_019.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_019.png" alt=""></figure>
 <p><em>Liste içinde liste = matris</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_020.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_020.png" alt=""></figure>
 <p><em>ones, zeros ve random ile (3,2) şekilli matrisler</em></p>
 <p>Çıktıyı okumayı kolaylaştırmak için dizi matrisleri satır satır alt alta yazdırılır. <code>matrix[1][0]</code> yani <strong>1. satır, 0. kolon</strong> istendiğinde (indeks numarasına göre) 15 değeri gelir. Matrislerde de <code>sum()</code> gibi dizi fonksiyonları çalışır.</p>
 <pre>numpy_matrix = np.array([[5, 10], [15, 20]])<br>numpy_matrix[1][0]        # 15<br>numpy_matrix.sum()        # 50<br>np.zeros((3, 5))          # 3 satır 5 kolonluk sıfır matrisi</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_021.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_022.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_023.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_021.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_022.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_023.png" alt=""></figure>
 <p><em>Matris aritmetiğinde beklenildiği gibi aynı indeksteki elemanlar birbirleriyle işleme girer ve sonuç yeni bir diziye yazılır.</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_024.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_024.png" alt=""></figure>
 <p><em>İki matrisi toplamak</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_025.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_025.png" alt=""></figure>
 <p><em>data + ones (2x2 matris toplama)</em></p>
 <h3>2.8 Matris çarpımı: dot product</h3>
 <p>"Matris çarpımı" denildiğinde genellikle <strong>dot product</strong> kastedilir. Bu işlem yapay zekada çok fazla kullanılır; özellikle <strong>derin öğrenmede dot product çok önemlidir</strong>.</p>
 <p>Bilgisayar biliminde görseller de aslında sayı matrisleridir: en küçük ölçü birimi pikseldir, her pikselin bir rengi ve renk kodu vardır; hepsi sonunda 0 ve 1'lerden ibarettir. Filtreleme, görsel işleme gibi işlemler matris çarpımıyla yapılır.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_026.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_026.png" alt=""></figure>
 <p><em>Bir görüntü, piksel değerlerinden oluşan sayı matrisidir</em></p>
 <p>Dot product için altın kural: <strong>birinci matrisin kolon sayısı, ikinci matrisin satır sayısına eşit olmalıdır.</strong> Birinci matristeki bir satırın tüm sayıları ile ikinci matristeki bir kolonun tüm sayıları çarpılıp toplanır; çıkan değer yeni matrise yazılır. Sonuç şekli (1x3) . (3x2) = <strong>(1x2)</strong> olur.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_027.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_027.png" alt=""></figure>
 <p><em>Dot product: 1x3 matris ile 3x2 matrisin çarpımı 1x2 sonuç verir</em></p>
 <p>Normalde <code>*</code> ile çarpamayıp hata alacağımız farklı boyutlu matrisleri <code>dot</code> fonksiyonuyla rahatça çarpabiliriz:</p>
-<pre>first_matrix  = np.array([[10, 20, 30]])            # (1, 3)<br>second_matrix = np.array([[2, 3], [2, 3], [2, 3]])  # (3, 2)<br><br>result_matrix = first_matrix.dot(second_matrix)<br>result_matrix         # array([[120, 180]])<br>result_matrix.shape   # (1, 2)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_028.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_029.png" alt=""></figure>
+<pre>first_matrix  = np.array([[10, 20, 30]])            # (1, 3)<br>second_matrix = np.array([[2, 3], [2, 3], [2, 3]])  # (3, 2)<br>result_matrix = first_matrix.dot(second_matrix)<br>result_matrix         # array([[120, 180]])<br>result_matrix.shape   # (1, 2)</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_028.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_029.png" alt=""></figure>
 <p><em>Sonuç: [[120, 180]] ve şekil (1, 2)</em></p>
 <blockquote><strong>MÜLAKAT / TEST İPUCU:</strong> Dot product'ın boyut kuralı ("ilkinin kolon sayısı = ikincinin satır sayısı") sık sorulan bir temel bilgidir. Yapay zekâ ve derin öğrenme konularına gidildiğinde bu işlem her yerde karşınıza çıkar.</blockquote>
 <h3>2.9 Boolean maskeleme: Filtrelemenin en kısa yolu</h3>
 <p>NumPy dizilerinde en çok kullanılan notasyonlardan biri, diziye koşul yazıp sonucu yine diziyle indekslemektir. <code>new_array &gt; 25</code> her eleman için True/False üretir; bu True/False dizisini köşeli parantez içine koyarsanız yalnızca koşulu sağlayanlar gelir.</p>
 <pre>new_array = np.random.randint(1, 100, 20)<br>new_array &gt; 25                # [True, True, False, ...]<br>new_array[new_array &gt; 25]     # yalnızca 25'ten büyükler<br>new_array[new_array &lt; 25]     # yalnızca 25'ten küçükler</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_030.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_030.png" alt=""></figure>
 <p><em>Boolean maske ile filtreleme</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Bu mantık, Pandas'ta <code>df[df["Age"] &gt; 1]</code> şeklinde birebir aynı çalışır. Yani burada öğrendiğiniz her şey, günlük iş hayatındaki DataFrame filtrelemenin temelidir.</blockquote>
 <h3>2.10 transpose ve reshape</h3>
 <p><strong>transpose</strong>: satır ve kolonların yerini değiştirir (<code>.transpose()</code> veya kısaca <code>.T</code>). <strong>reshape</strong>: dizinin şeklini değiştirir. Bu iki fonksiyonun çok kullanımı vardır ve özellikle Pandas'ta sık karşımıza çıkar.</p>
-<pre>matrix_array = np.array([[10, 20], [20, 30], [30, 40]])   # (3, 2)<br>matrix_array.transpose()    # (2, 3)  -&gt;  [[10, 20, 30], [20, 30, 40]]<br>matrix_array.T              # aynı sonuç<br><br>random_array.reshape(2, 3)  # 6 elemanlı diziyi 2x3 yapar<br>random_array.reshape(3, 2)  # 3x2 yapar</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_031.png" alt=""></figure>
+<pre>matrix_array = np.array([[10, 20], [20, 30], [30, 40]])   # (3, 2)<br>matrix_array.transpose()    # (2, 3)  -&gt;  [[10, 20, 30], [20, 30, 40]]<br>matrix_array.T              # aynı sonuç<br>random_array.reshape(2, 3)  # 6 elemanlı diziyi 2x3 yapar<br>random_array.reshape(3, 2)  # 3x2 yapar</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_031.png" alt=""></figure>
 <p><em>transpose ve .T</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_032.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_032.png" alt=""></figure>
 <p><em>reshape(2,3) ve reshape(3,2)</em></p>
 <h3>2.11 Uygulama 1: z-score ile outlier (aykırı değer) bulmak</h3>
 <p>Outlier bulmak için birçok yöntem vardır (boxplot, Pandas vb.). Kendimiz hesaplamak istersek adımlar şöyledir:</p>
 <ol><li>İlk başta <strong>ortalama</strong> bulunur.</li><li>Sonra <strong>standart sapma</strong> bulunur.</li><li>Z skorları için <strong>(data - mean) / std</strong> hesaplanır.</li></ol>
-<pre>data = np.array([10, 12, 13, 15, 18, 25, 100, 105])<br><br>mean = np.mean(data)        # 37.25   (data.sum() / len(data) ile aynı)<br>std  = np.std(data)         # 37.933...<br>z_score = (data - mean) / std<br><br>data[z_score &gt; 1]           # array([100, 105])  -&gt; outlier adayları</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_033.png" alt=""></figure>
+<pre>data = np.array([10, 12, 13, 15, 18, 25, 100, 105])<br>mean = np.mean(data)        # 37.25   (data.sum() / len(data) ile aynı)<br>std  = np.std(data)         # 37.933...<br>z_score = (data - mean) / std<br>data[z_score &gt; 1]           # array([100, 105])  -&gt; outlier adayları</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_033.png" alt=""></figure>
 <p><em>Ortalama, standart sapma ve z-score hesabı</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_034.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_034.png" alt=""></figure>
 <p><em>z-score &gt; 1 olan değerler: 100 ve 105</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Bu tek satırlık NumPy işlemi (<code>(data - mean) / std</code>) broadcasting'in gerçek hayattaki en güzel örneklerinden biridir: tek bir sayıyı tüm diziye "yayıp" bütün değerleri tek seferde standartlaştırıyorsunuz. Aykırı değerler ortalama gibi metrikleri bozduğu için analiz öncesi tespit etmek şarttır.</blockquote>
 <h3>2.12 Uygulama 2: Denklem çözmek (linalg.solve)</h3>
 <p>İkinci örnek, iki bilinmeyenli bir doğrusal denklem sistemidir: <strong>2x + 3y = 8</strong> ve <strong>5x + 7y = 19</strong>. Katsayılar genel olarak <strong>A</strong> harfiyle, sabitler <strong>b</strong> ile gösterilir. <code>np.linalg.solve</code> ("lineer algebra: denklemi çöz") sistemi tek satırda çözer.</p>
-<pre>A = np.array([[2, 3], [5, 7]])   # katsayılar<br>b = np.array([8, 19])            # sabitler<br><br>solution = np.linalg.solve(A, b)<br>solution                         # array([1., 2.])   -&gt; x = 1, y = 2</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_035.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_036.png" alt=""></figure>
+<pre>A = np.array([[2, 3], [5, 7]])   # katsayılar<br>b = np.array([8, 19])            # sabitler<br>solution = np.linalg.solve(A, b)<br>solution                         # array([1., 2.])   -&gt; x = 1, y = 2</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_035.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_036.png" alt=""></figure>
 <p><em>Çözüm: x = 1, y = 2</em></p>
 <h2>Bölüm 3 – Pandas: Verinin Excel'i, Ama Python Gücüyle</h2>
 <p>Verileri manipüle etmek (ekleme, çıkarma, filtreleme...) için <strong>Pandas</strong> kullanılır ve NumPy ile çok sık birlikte çalışır. Görevi şudur: bir yerden gelen veri var (veritabanı olabilir, CSV olabilir), Pandas bu veriyi alıp sanki Excel'miş gibi <strong>satır satır ve sütun sütun</strong> önümüze getirir. İstediğimiz satırı getirebilir, ekleme çıkarma yapabiliriz. Getirdiği bu genel tabloya <strong>DataFrame</strong> denir.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_037.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_037.png" alt=""></figure>
 <p><em>music.csv dosyası, pandas.read_csv ile DataFrame'e dönüşür</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Notlardaki ifadeyle: "Veri biliminde her saniye kullandığın kütüphanedir." Pandas'ı en çok kullandığımız yer, CSV/Excel gibi dosyaları DataFrame haline getirmektir.</blockquote>
 <h3>3.1 Series: Tek boyutlu veri</h3>
 <p><code>Series</code>, tek boyutlu veriyi tutar (index + değer). Günlük hayatta çok kullanılmaz çünkü DataFrame kullanırız; <strong>DataFrame aslında Series'lerin birleşimidir.</strong> Buna rağmen Series bilgisi testlerde ve mülakatlarda karşınıza çıkabilir.</p>
-<pre>import pandas as pd<br><br>grades = {"Atil": 50, "James": 60, "Lars": 30}<br>pd.Series(grades)                       # index'ler sözlük anahtarları olur<br><br>np_array = np.array([10, 20, 30, 40])<br>pd.Series(np_array)                     # index'ler 0,1,2,3 olur</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_038.png" alt=""></figure>
+<pre>import pandas as pd<br>grades = {"Atil": 50, "James": 60, "Lars": 30}<br>pd.Series(grades)                       # index'ler sözlük anahtarları olur<br>np_array = np.array([10, 20, 30, 40])<br>pd.Series(np_array)                     # index'ler 0,1,2,3 olur</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_038.png" alt=""></figure>
 <p><em>Sözlükten Series</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_039.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_039.png" alt=""></figure>
 <p><em>NumPy dizisinden Series</em></p>
 <p>Aynı indekse sahip olduğunuz sürece Series'leri toplayabilir, bölebilir, çarpabilir veya çıkarabilirsiniz. Eşleşen bir indeks bulamazsa hata değil <strong>NaN</strong> üretir.</p>
-<pre>contest_result  = pd.Series(data=[10, 5, 100], index=["Atil", "James", "Lars"])<br>contest_result2 = pd.Series(data=[20, 50, 10],  index=["Atil", "James", "Lars"])<br><br>contest_result["Atil"]              # 10<br>final_result = contest_result + contest_result2<br># Atil 30, James 55, Lars 110</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_040.png" alt=""></figure>
+<pre>contest_result  = pd.Series(data=[10, 5, 100], index=["Atil", "James", "Lars"])<br>contest_result2 = pd.Series(data=[20, 50, 10],  index=["Atil", "James", "Lars"])<br>contest_result["Atil"]              # 10<br>final_result = contest_result + contest_result2<br># Atil 30, James 55, Lars 110</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_040.png" alt=""></figure>
 <p><em>Series aritmetiği indeks üzerinden yapılır</em></p>
 <blockquote><strong>MÜLAKAT / TEST İPUCU:</strong> Series testlerde veya mülakatlarda karşınıza çıkabilir. Akılda kalacak üç cümle: (1) tek boyutludur, çok boyutlu veri verirseniz hata alırsınız; (2) aritmetik indekse göre yapılır; (3) eşleşmeyen indeks NaN olur.</blockquote>
 <h3>3.2 DataFrame: Çok boyutlu tablo</h3>
 <p>Çok boyutlu veriyi tutmak için <code>DataFrame</code> kullanılır. NumPy dizisinden bile DataFrame yapabilirsiniz; satır ve kolon isimlerini de kendiniz verebilirsiniz.</p>
-<pre>data = np.random.randn(4, 3)<br>data_frame = pd.DataFrame(data)<br><br>new_df = pd.DataFrame(data,<br>                      index=["Yiğit", "Alperen", "Bekiroğlu", "Şen"],<br>                      columns=["Salary", "Age", "Seniority"])</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_041.png" alt=""></figure>
+<pre>data = np.random.randn(4, 3)<br>data_frame = pd.DataFrame(data)<br>new_df = pd.DataFrame(data,<br>                      index=["Yiğit", "Alperen", "Bekiroğlu", "Şen"],<br>                      columns=["Salary", "Age", "Seniority"])</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_041.png" alt=""></figure>
 <p><em>NumPy dizisinden DataFrame</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_042.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_042.png" alt=""></figure>
 <p><em>index ve columns ile isimlendirilmiş DataFrame</em></p>
 <h3>3.3 Seçim işlemleri: Kolon, satır, hücre</h3>
 <h4>Kolon seçmek</h4>
 <p>Belirli kolonların gelmesini istersek <strong>liste içinde liste</strong> gibi yazarız (çift köşeli parantez):</p>
 <pre>new_df[["Age", "Salary"]]</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_043.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_043.png" alt=""></figure>
 <h4>Satır seçmek: loc ve iloc</h4>
 <ul><li><code>.loc[...]</code> (location): satırı <strong>etiketiyle (isimle)</strong> bulur → <code>new_df.loc["Yiğit"]</code></li><li><code>.iloc[...]</code> (index location): satırı <strong>sıra numarasıyla</strong> bulur → <code>new_df.iloc[0]</code></li></ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_044.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_044.png" alt=""></figure>
 <p><em>loc ile isimle seçim</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_045.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_045.png" alt=""></figure>
 <p><em>iloc ile sıra numarasıyla seçim</em></p>
 <p>Kolonu da indeksle seçebiliriz; biraz garip bir gösterimi vardır: <code>new_df.iloc[:, 2]</code>. Buradaki <code>:</code> "bütün satırları seç" demektir; <code>2</code> ise kolon numarasıdır (0 Salary, 1 Age, 2 Seniority).</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_046.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_046.png" alt=""></figure>
 <p><em>iloc[:, 2] tüm satırlardaki 3. kolonu getirir</em></p>
 <blockquote><strong>ÖZET:</strong> <code>.iloc</code> genellikle <strong>ismi olmayan</strong> kolon ve satırlar için kolaylık sağlar. Kolon/satır adı yoksa <code>.iloc</code> ile okuma işlemini rahatlıkla yapabiliriz.</blockquote>
 <h4>Tek bir hücre seçmek ve değiştirmek</h4>
 <p>Bir satırın tüm bilgisini değil de belirli bir kolon bilgisini istersek <code>loc</code> içine hem satır hem kolon yazarız. Aynı yazımla değer ataması da yapılabilir.</p>
 <pre>new_df.loc["Atlas"]["Salary"]     # zincirleme<br>new_df.loc["Atlas", "Salary"]     # aynı sonuç, tek adımda<br>new_df.loc["Atlas", "Salary"] = 100   # hücreyi değiştirir</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_047.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_048.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_047.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_048.png" alt=""></figure>
 <p><em>Hücre okuma ve değiştirme</em></p>
 <h3>3.4 Kolon eklemek ve silmek (axis ve inplace)</h3>
 <p>Yeni kolon eklemek çok basittir. Silmek için <code>.drop</code> kullanılır. <strong>axis</strong> "eksen" demektir: <strong>0 = satır, 1 = kolon</strong>.</p>
 <pre>new_df["Extra"] = 10                    # tüm satırlara 10 yazan yeni kolon<br>new_df.drop("Extra", axis=1)            # kolonu siler (ama kalıcı DEĞİL)<br>new_df.drop("Extra", axis=1, inplace=True)   # kalıcı siler<br>new_df.drop("Mehmet")                   # axis verilmezse default 0 -&gt; satır siler</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_049.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_049.png" alt=""></figure>
 <p><em>Ek kolon ekleme</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_050.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_050.png" alt=""></figure>
 <p><em>drop("Extra", axis=1)</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_051.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_051.png" alt=""></figure>
 <p><em>inplace=True: değişiklik DataFrame'e kalıcı olarak işler</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_052.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_052.png" alt=""></figure>
 <p><em>axis verilmezse satır silinir (default axis=0)</em></p>
 <blockquote><strong>DİKKAT:</strong> <code>drop</code> tek başına DataFrame'i <strong>değiştirmez</strong>, silinmiş yeni bir görünüm döndürür. Kalıcı olmasını istiyorsanız <code>inplace=True</code> yazmalı veya sonucu bir değişkene atamalısınız. <code>axis</code>'i unutmak da klasik hatadır: varsayılan 0 olduğu için kolon adı yazıp satır ararsınız.</blockquote>
 <h3>3.5 Koşullu filtreleme</h3>
 <p>NumPy'da yaptığımız işlemlerin bazıları Pandas'ta da yapılabilir. DataFrame'e koşul verirsek True/False tablosu döner; bu tabloyu tekrar DataFrame'e köşeli parantezle verirsek koşulu sağlayanlar sayı olarak gelir, sağlamayanlar NaN olur. Belirli bir kolona göre filtrelemek de mümkündür.</p>
 <pre>new_df &gt; 0                       # True/False tablosu<br>new_df[new_df &gt; 0]               # koşulu sağlamayanlar NaN<br>new_df[new_df["Age"] &gt; 1]        # sadece Age'i 1'den büyük satırlar</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_053.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_053.png" alt=""></figure>
 <p><em>Boolean tablo</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_054.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_054.png" alt=""></figure>
 <p><em>Koşulu sağlamayan hücreler NaN olur</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_055.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_055.png" alt=""></figure>
 <p><em>Belirli bir kolona göre filtreleme</em></p>
 <h3>3.6 Index yönetimi: reset_index, set_index, MultiIndex</h3>
 <p>Index değiştirme işlemi oldukça fazla karşımıza çıkar. Index numarasına göre gitmek bizi rahatlatabilir.</p>
 <ul><li><code>.reset_index()</code>: mevcut indeksleri <strong>ayrı bir kolon</strong> olarak açar ve asıl indeksler 0'dan başlar.</li><li><code>df["NewIndex"] = new_indices</code> ile yeni bir kolon ekleyip <code>df.set_index("NewIndex", inplace=True)</code> ile onu indeks yapabiliriz.</li></ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_056.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_057.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_056.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_057.png" alt=""></figure>
 <p><em>reset_index(): eski indeks "index" kolonuna dönüşür</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_058.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_059.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_058.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_059.png" alt=""></figure>
 <p><em>Yeni bir kolon ekleme</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_060.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_060.png" alt=""></figure>
 <p><em>set_index ile yeni indeksi atama</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_061.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_061.png" alt=""></figure>
 <p><em>Artık yeni indeksle erişilebilir: loc["ygt"]</em></p>
 <p>Yani indeksleri resetleyebilir, değiştirebilir, manipüle edebiliriz.</p>
 <h4>MultiIndex (birden fazla indeks)</h4>
 <p>Birden fazla indeks de karşımıza çıkabilir. Çok sık çıkmaz ama bilmek gerekir. Kullandığımız fonksiyon <code>pd.MultiIndex.from_tuples()</code>. Önce dış ve iç indeks listelerini <code>zip</code> ile demetlere çeviriyoruz:</p>
-<pre>first_index = ["Simpson","Simpson","Simpson","South Park","South Park","South Park"]<br>inner_index = ["Homer","Bart","Marge","Cartman","Kenny","Kyle"]<br><br>zipped_index = list(zip(first_index, inner_index))<br>zipped_index = pd.MultiIndex.from_tuples(zipped_index)<br><br>sample_values = np.ones((6, 2))<br>big_df = pd.DataFrame(sample_values, index=zipped_index, columns=["Age", "Salary"])<br><br>big_df.loc["Simpson"]                  # önce dış indeks<br>big_df.loc["Simpson"].loc["Homer"]     # sonra iç indeks</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_062.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_063.png" alt=""></figure>
+<pre>first_index = ["Simpson","Simpson","Simpson","South Park","South Park","South Park"]<br>inner_index = ["Homer","Bart","Marge","Cartman","Kenny","Kyle"]<br>zipped_index = list(zip(first_index, inner_index))<br>zipped_index = pd.MultiIndex.from_tuples(zipped_index)<br>sample_values = np.ones((6, 2))<br>big_df = pd.DataFrame(sample_values, index=zipped_index, columns=["Age", "Salary"])<br>big_df.loc["Simpson"]                  # önce dış indeks<br>big_df.loc["Simpson"].loc["Homer"]     # sonra iç indeks</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_062.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_063.png" alt=""></figure>
 <p><em>MultiIndex nesnesi</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_064.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_064.png" alt=""></figure>
 <p><em>MultiIndex'li DataFrame</em></p>
 <p>Homer'a ulaşmak istersek <strong>önce Simpson'a, sonra Homer'a</strong> ulaşmalıyız:</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_065.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_065.png" alt=""></figure>
 <p><em>İç içe loc ile MultiIndex'te erişim</em></p>
 <h3>3.7 Dosya okumak ve veriyi tanımak</h3>
 <p>Uygulamalarda ilk iş, Excel/CSV dosyasını Pandas'ta okumaktır. <strong>CSV</strong> dosyaları daha çok kullanılır çünkü daha az yer kaplar; Excel tablosunun virgüllerle ayrılmış hâlidir ve veri saklamak için çok yaygın bir formattır. Dosya proje ile aynı dizinde değilse dosyanın yolunu (path) tam olarak yazmak gerekir.</p>
 <pre>weather_df = pd.read_excel('6-weather.xlsx')<br>df = pd.read_csv('6-employee.csv')</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_066.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_066.png" alt=""></figure>
 <p><em>read_excel ile şehir sıcaklık verisi</em></p>
 <p>Veriyi ilk gördüğünüzde yapacağınız keşif komutları:</p>
 <ul>
@@ -255,70 +255,70 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <li><strong><code>df.isna()</code></strong> — Eksik veri var mı? Her hücre için True/False verir. Üzerinde çok duruyoruz, önemli bir konudur.</li>
 <li><strong><code>df.shape</code></strong> — Satır ve kolon sayısı: örn. (891, 15).</li>
 </ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_067.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_067.png" alt=""></figure>
 <p><em>head() ve tail()</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_068.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_068.png" alt=""></figure>
 <p><em>info(): non-null sayıları ve tipler</em></p>
 <p><code>describe()</code> çıktısından yorum çıkarmak veri bilimcinin işidir. Notlardaki örnek: İstanbul'un sıcaklık ortalaması diğer şehirlere göre yüksektir, aynı zamanda standart sapması da yüksektir; yani ortalamadan sapma miktarı fazladır. <strong>%50'lik kısım medyana denk gelir</strong> (ortanca sayı).</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_069.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_069.png" alt=""></figure>
 <p><em>describe(): şehir bazında betimleyici istatistikler</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_070.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_070.png" alt=""></figure>
 <p><em>count()</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_071.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_071.png" alt=""></figure>
 <p><em>isna(): eksik veri var mı?</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Eksik veri karar mekanizması notlarda şöyle özetleniyor: bir kolonun <strong>%90'ı boşsa</strong> o kolonu datadan çıkarmak isteyebilirsiniz; <strong>%2'si boşsa</strong> boşlukları bir şeylerle doldurmak isteyebilirsiniz. Bu karar mantığını Feature Engineering bölümünde ayrıntılandıracağız.</blockquote>
 <h3>3.8 Eksik verilerle çalışmak: dropna ve fillna</h3>
 <p>Makine öğrenmesi algoritmalarında <strong>eksik veriler başımıza bela olabilir.</strong> Pandas'ın iki temel silahı vardır:</p>
 <ul><li><code>dropna()</code>: eksik verisi olan <strong>satırları</strong> siler. Bir hücrenin eksik olması bile satırın silinmesine yeter.</li><li><code>fillna(değer)</code>: eksik hücrelere verdiğiniz değeri yazar.</li><li>Alternatif çözüm: NaN'ı çok olan kolonu tamamen kaldırmak → <code>weather_na_pdf.drop("Paris", axis=1)</code></li></ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_072.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_072.png" alt=""></figure>
 <p><em>Eksik verili hava durumu tablosu (NaN'lar var)</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_073.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_073.png" alt=""></figure>
 <p><em>dropna(): NaN içeren satırlar silindi</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_074.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_074.png" alt=""></figure>
 <p><em>fillna(20): tüm boşluklara 20 yazıldı</em></p>
 <p>Her boşluğa sabit bir sayı yazmak çoğu zaman mantıksızdır. Daha akıllıca yol, <strong>her kolonun kendi ortalamasını</strong> o kolonun boşluklarına yazmaktır:</p>
 <pre>weather_na_pdf.mean()                                # kolon ortalamaları<br>weather_na_pdf.fillna(weather_na_pdf.mean())         # her kolonun boşluğuna kendi ortalaması</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_075.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_075.png" alt=""></figure>
 <p><em>Kolon bazlı ortalamalar</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_076.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_076.png" alt=""></figure>
 <p><em>fillna(mean()): her kolon kendi ortalamasıyla dolduruldu</em></p>
 <h3>3.9 groupby: Gruplayıp özetlemek</h3>
 <p>Çalışan verisiyle (Department, Employee, Salary, Experience, City) çalışalım. <code>describe()</code> yalnızca sayısal kolonları özetler; <code>Department</code>, <code>Employee</code>, <code>City</code> gibi sayısal olmayan kolonlar getirilmez.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_077.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_077.png" alt=""></figure>
 <p><em>Çalışan veri seti (6-employee.csv)</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_078.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_078.png" alt=""></figure>
 <p><em>describe(): sadece Salary ve Experience</em></p>
 <p>Tüm DataFrame'in ortalamasını almaya çalışırsanız, sayısal olmayan kolonlar yüzünden hata alırsınız. Çözüm: sayısal kolonu seçip ortalama almak. Koşullu sayım da kolaydır:</p>
 <pre>df['Salary'].mean()                  # 78344.5<br>df[df['Experience'] &gt; 6].count()     # tecrübesi 6 yıldan fazla olan 30 kişi</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_079.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_080.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_079.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_080.png" alt=""></figure>
 <p><em>Tecrübesi 6 yıldan fazla olan 30 kişi var</em></p>
 <p><strong>`groupby()` gruplama yapmayı sağlar. Önemlidir, çok kullanırız.</strong> Bir kolona göre gruplayıp ardından bir özet fonksiyonu (count, mean, sum...) uygularız:</p>
-<pre>df_grouped = df.groupby('Department')<br>df_grouped.count()            # departman başına kişi sayısı<br><br>df.groupby('City')['Salary'].mean()       # şehir başına ortalama maaş<br>df.groupby('City')['Experience'].mean()   # şehir başına ortalama tecrübe</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_081.png" alt=""></figure>
+<pre>df_grouped = df.groupby('Department')<br>df_grouped.count()            # departman başına kişi sayısı<br>df.groupby('City')['Salary'].mean()       # şehir başına ortalama maaş<br>df.groupby('City')['Experience'].mean()   # şehir başına ortalama tecrübe</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_081.png" alt=""></figure>
 <p><em>Departmana göre gruplama: Finance 10, HR 7, IT 10, Marketing 13, Sales 10</em></p>
 <p>Notlardaki soru: <strong>"Şehirlere göre maaşların değişip değişmediğini bulmaya çalış."</strong> Cevap için önce şehre göre gruplayıp maaş ortalamasına, sonra tecrübe ortalamasına bakıyoruz. Kazandıkları para tecrübeleriyle orantılı mıdır? (Net bir doğru orantı söz konusu değil.)</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_082.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_082.png" alt=""></figure>
 <p><em>Şehre göre ortalama maaş</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_083.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_083.png" alt=""></figure>
 <p><em>Şehre göre ortalama tecrübe</em></p>
 <h3>3.10 concat ve merge: Tabloları birleştirmek</h3>
 <p>Gerçek hayat senaryolarına çok uygun oldukları için <code>concat</code> ve <code>merge</code> sık karşımıza çıkan fonksiyonlardır.</p>
 <h4>concat: Alt alta birleştirme</h4>
 <p><code>pd.concat</code> aynı kolonlara sahip tabloları birleştirir. Aşağıdaki iki CSV dosyasını (Employee_ID 1-10 ve 11-20) birleştireceğiz.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_084.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_084.png" alt=""></figure>
 <p><em>df1: çalışanlar 1-10</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_085.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_085.png" alt=""></figure>
 <p><em>df2: çalışanlar 11-20</em></p>
 <p><strong>`ignore_index=True` yapmak önemlidir</strong> çünkü default değeri False'tur ve iki DataFrame için de indeksler 0'dan başlayıp 9'a gider; birleşince indeksler tekrar eder ki bu istenmeyen bir durumdur.</p>
 <pre>pd.concat([df1, df2], ignore_index=True)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_086.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_086.png" alt=""></figure>
 <p><em>concat sonucu: 20 satır ve temiz indeks</em></p>
 <h4>merge: Ortak bir anahtara göre eşleştirme</h4>
 <p><code>merge</code> daha çok karşımıza çıkar. Önceki örnekte tablolarda kolonlar aynıydı ama gerçek hayatta bu kadar kolay olmayabilir. Örneğin bir tablodan ID alıp diğer tablodaki maaş bilgisiyle eşleştirme yapabiliriz. <code>on="Employee_ID"</code> hangi kolona göre birleştirileceğini söyler (ortak olan kısım burasıdır); <code>how</code> ise birleştirme türünü belirler.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_087.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_087.png" alt=""></figure>
 <p><em>df_merge1: ID, isim, departman</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_088.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_088.png" alt=""></figure>
 <p><em>df_merge2: ID, maaş, tecrübe (bazı ID'ler farklı)</em></p>
 <ul>
 <li><strong><code>"outer"</code></strong> — Her şeyi kapsar. Eşleşenleri yan yana yazar, bilgisi olmayanlara NaN yazar. — <em>Ne zaman?:</em> Hiçbir kaydı kaybetmek istemiyorum.</li>
@@ -327,71 +327,71 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <li><strong><code>"inner"</code></strong> — İki tablodaki kesişim kümesini alır, diğerlerini çıkarır. — <em>Ne zaman?:</em> Sadece iki tarafta da bilgisi olanlar.</li>
 </ul>
 <pre>pd.merge(df_merge1, df_merge2, on="Employee_ID", how="outer")<br>pd.merge(df_merge1, df_merge2, on="Employee_ID", how="left")<br>pd.merge(df_merge1, df_merge2, on="Employee_ID", how="right")<br>pd.merge(df_merge1, df_merge2, on="Employee_ID", how="inner")</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_089.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_089.png" alt=""></figure>
 <p><em>Outer join: 13 satır, eşleşmeyenler NaN</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_090.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_090.png" alt=""></figure>
 <p><em>Left join: ilk tablo baz alınır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_091.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_091.png" alt=""></figure>
 <p><em>Right join: ikinci tablo baz alınır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_092.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_092.png" alt=""></figure>
 <p><em>Inner join: yalnızca kesişim (5 satır)</em></p>
 <blockquote><strong>MÜLAKAT / TEST İPUCU:</strong> <strong>Merge, testlerde gelebilir ama mülakatlarda gelme ihtimali düşüktür.</strong> Yine de left/right/inner/outer farkını bir cümleyle anlatabilmek iyi bir hazırlıktır.</blockquote>
 <blockquote><strong>SEKTÖR NOTU:</strong> İş hayatında veri neredeyse hiç tek tabloda gelmez: müşteri bilgisi bir tabloda, siparişler başka bir tabloda durur. <code>merge</code> ile ortak anahtar (ID) üzerinden bu tabloları birleştirmek günlük iştir. Hangi <code>how</code> seçeneğini kullandığınız, eşleşmeyen kayıtları kaybedip kaybetmeyeceğinizi belirler.</blockquote>
 <h3>3.11 apply ve lambda: Her satıra fonksiyon uygulamak</h3>
 <p>Yeni bir dataset (<code>8-apply_function_data.csv</code>: 100 satır, 6 kolon) ile başlıyoruz. Büyük datalarda tüm veriyi göstermeyebilir; <code>head</code> ve <code>tail</code> ile datanın neye benzediğini anlayabilirsiniz. <code>info()</code> çıktısında boş değer olmadığı, <code>object</code> tipindeki kolonların ise isim ve departman gibi <strong>kategorik değişkenler</strong> olduğu görülür.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_093.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_093.png" alt=""></figure>
 <p><em>apply örnekleri için kullanılan veri</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_094.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_094.png" alt=""></figure>
 <p><em>info(): boş veri yok; object = kategorik</em></p>
 <p>Görev: maaşı 50.000'den azsa <code>low</code>, 50.000-80.000 arasıysa <code>medium</code>, 80.000 üstüyse <code>high</code> yazan yeni bir kolon. Python'da bunun fonksiyonu kolaydır:</p>
 <pre>def salary_category(salary):<br>    if salary &lt; 50000:<br>        return "low"<br>    elif 50000 &lt; salary &lt; 80000:<br>        return "medium"<br>    else:<br>        return "high"</pre>
 <p>Bu fonksiyonu her satıra uygulamak için <strong>`apply`</strong> kullanılır. Sonucu kolon olarak DataFrame'e almak da tek satırdır:</p>
 <pre>df['Salary'].apply(salary_category)                  # Series döner<br>df["Salary Category"] = df['Salary'].apply(salary_category)   # yeni kolon</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_095.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_096.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_095.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_096.png" alt=""></figure>
 <p><em>apply çıktısı (Series)</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_097.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_097.png" alt=""></figure>
 <p><em>Yeni "Salary Category" kolonu</em></p>
 <blockquote><strong>DİKKAT:</strong> Notlardaki fonksiyonda <code>elif 50000 &lt; salary &lt; 80000</code> yazılmış; bu durumda tam <strong>50000</strong> ve tam <strong>80000</strong> değerleri "medium" aralığına girmez, "high"a düşer. Sınır değerlerini bilerek seçin; gerçek projede <code>&lt;=</code> mı <code>&lt;</code> mı olduğu iş kuralına göre netleştirilmelidir.</blockquote>
 <h4>Örnek: Tecrübeye göre performans skoru</h4>
 <p>Soru: <strong>Tecrübe 10 yıldan fazlaysa performans skorunu bir artır.</strong> "İleride lazım olacak bilgiler var, çözüme dikkatli bak." Birinci çözümde <code>Experience</code> kolonuna bakılıp 10 yıldan fazla olanlara 1, olmayanlara 0 verilir; sonra kolonlar toplanır.</p>
-<pre>def adjust_performance(experience):<br>    if experience &gt; 10:<br>        return 1<br>    else:<br>        return 0<br><br>df["Adjusted"]  = df["Experience"].apply(adjust_performance)<br>df["New_Score"] = df["Performance_Score"] + df["Adjusted"]</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_098.png" alt=""></figure>
+<pre>def adjust_performance(experience):<br>    if experience &gt; 10:<br>        return 1<br>    else:<br>        return 0<br>df["Adjusted"]  = df["Experience"].apply(adjust_performance)<br>df["New_Score"] = df["Performance_Score"] + df["Adjusted"]</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_098.png" alt=""></figure>
 <p><em>adjust_performance fonksiyonu ve apply çıktısı</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_099.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_099.png" alt=""></figure>
 <p><em>Adjusted kolonu</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_100.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_100.png" alt=""></figure>
 <p><em>New_Score = Performance_Score + Adjusted</em></p>
 <h4>2. Çözüm: Tüm satırı fonksiyona vermek (axis=1)</h4>
 <p><code>df.apply()</code> bütün satırları verir, bu yüzden <code>["Experience"]</code> diye belirtmeye gerek yoktur. <strong>`axis=1`</strong> belirtmekte fayda vardır: işlemi satır bazında (her satırı tek nesne olarak) yaptığımızı belli eder. Default değeri 0'dır. Bu yöntem, karar için birden fazla kolonun birlikte gerektiği durumlarda çok güçlüdür.</p>
-<pre>def adjust_new(row):<br>    if row["Experience"] &gt; 10:<br>        return row["Performance_Score"] + 1<br>    else:<br>        return row["Performance_Score"]<br><br>df["New_Score2"] = df.apply(adjust_new, axis=1)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_101.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_102.png" alt=""></figure>
+<pre>def adjust_new(row):<br>    if row["Experience"] &gt; 10:<br>        return row["Performance_Score"] + 1<br>    else:<br>        return row["Performance_Score"]<br>df["New_Score2"] = df.apply(adjust_new, axis=1)</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_101.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_102.png" alt=""></figure>
 <p><em>İki çözümün sonucu aynı: New_Score ve New_Score2</em></p>
 <h4>lambda: Anonim fonksiyonlar</h4>
 <p>Tek satırlık işler için ayrı bir <code>def</code> yazmak yerine <strong>lambda (anonim fonksiyon)</strong> kullanılır. Örnek: isimlerdeki <code>_</code> karakterini boşlukla değiştirerek isimleri formatlamak (yerine hiçbir şey koymazsak ne olacağı da görülebilir):</p>
 <pre>df["Formatted_Name"] = df["Name"].apply(lambda x: x.replace("_", " "))   # Emp_1 -&gt; Emp 1</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_103.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_103.png" alt=""></figure>
 <p><em>lambda ile isim formatlama</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> <strong>`apply` fonksiyonu karşımıza çok fazla çıkar. Devamlı olarak DataFrame'lerde kullanmaya çalışırız.</strong> Kural tabanlı yeni kolonlar (kategori, etiket, skor düzeltmesi) üretmenin en okunaklı yollarından biridir.</blockquote>
 <h2>Bölüm 4 – Matplotlib: Veriyi Çizmek</h2>
 <p>Matplotlib ve Seaborn beraber kullanılır ve en popüler veri görselleştirme kütüphaneleridir. Matplotlib'i <code>import matplotlib.pyplot as plt</code> ile çağırırız. Jupyter'de grafiklerin defterin içinde görünmesi için <code>%matplotlib inline</code> yazılır (bu satır PyCharm için geçerli değildir).</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_104.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_104.png" alt=""></figure>
 <p><em>İlk Matplotlib grafiği için gereken kod</em></p>
 <h3>4.1 İlk grafik: plt.plot</h3>
-<pre>import numpy as np<br>import matplotlib.pyplot as plt<br>%matplotlib inline<br><br>age_list    = [10, 20, 30, 30, 30, 40, 50, 60, 70, 75]<br>weight_list = [20, 60, 80, 85, 86, 87, 70, 90, 95, 90]<br><br>plt.plot(age_list, weight_list, "r")    # "y" yellow, "g" green, "r" red...<br>plt.xlabel("Age")<br>plt.ylabel("Weight")<br>plt.title("Age vs Weight")<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_105.png" alt=""></figure>
+<pre>import numpy as np<br>import matplotlib.pyplot as plt<br>%matplotlib inline<br>age_list    = [10, 20, 30, 30, 30, 40, 50, 60, 70, 75]<br>weight_list = [20, 60, 80, 85, 86, 87, 70, 90, 95, 90]<br>plt.plot(age_list, weight_list, "r")    # "y" yellow, "g" green, "r" red...<br>plt.xlabel("Age")<br>plt.ylabel("Weight")<br>plt.title("Age vs Weight")<br>plt.show()</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_105.png" alt=""></figure>
 <p><em>Age vs Weight çizgi grafiği</em></p>
 <p>Matplotlib, Python listeleriyle olduğu gibi <strong>NumPy dizileriyle de</strong> çalışır:</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_106.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_106.png" alt=""></figure>
 <p><em>Listeleri NumPy dizisine çevirmek</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_107.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_107.png" alt=""></figure>
 <p><em>Aynı grafik NumPy dizileriyle</em></p>
 <h3>4.2 linspace ile üssel bir eğri</h3>
 <p><code>np.linspace(0, 10, 20)</code> bizim söylediğimiz aralıkta <strong>eşit aralıklı</strong> sayılar döner. Bu diziyi küpe alıp çizersek üssel bir ifadenin grafiğini elde ederiz. <strong>Grafiği okumak veri bilimi için önemlidir.</strong></p>
 <pre>np_arr1 = np.linspace(0, 10, 20)<br>np_arr2 = np_arr1 ** 3<br>plt.plot(np_arr1, np_arr2)<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_108.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_109.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_108.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_109.png" alt=""></figure>
 <p><em>x³ eğrisi (renk vermesek de çizer)</em></p>
 <p>Çizgi ve işaret biçimi kısa kodlarla belirlenir (hepsi mavi örneği):</p>
 <ul>
@@ -403,27 +403,27 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <h3>4.3 Birden fazla grafik: subplot</h3>
 <p><code>plt.subplot(1, 2, 1)</code> = "1 satır, 2 kolon, ilk grafiği çiz". <code>plt.subplot(1, 2, 2)</code> = "1 satır, 2 kolon, ikinci grafiği çiz".</p>
 <pre>plt.subplot(1, 2, 1)<br>plt.plot(np_arr1, np_arr2, "r*")<br>plt.subplot(1, 2, 2)<br>plt.plot(np_arr2, np_arr1, "b--")<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_110.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_110.png" alt=""></figure>
 <p><em>Yan yana iki grafik</em></p>
 <h3>4.4 Kendi figürümüzü oluşturmak: figure ve add_axes</h3>
 <p>Şimdiye kadar x ve y eksenlerini Matplotlib kendisi oluşturdu; biz de müdahale edebiliriz. Kendi figürümüzü oluşturup üzerine eksen ekliyoruz. <code>add_axes([0.1, 0.1, 0.3, 0.3])</code> içindeki değerler sırasıyla soldan ve alttan boşluk (0.1, 0.1), ardından <strong>genişlik (0.3)</strong> ve <strong>yükseklik (0.3)</strong>'dir. Hepsi 0 ile 1 arasında değer alır.</p>
 <pre>my_figure = plt.figure()<br>my_figure_axes = my_figure.add_axes([0.1, 0.1, 0.3, 0.3])<br>my_figure_axes.plot(np_arr1, np_arr2, "g")<br>my_figure_axes.set_xlabel("X Axis")<br>my_figure_axes.set_ylabel("Y Axis")<br>my_figure_axes.set_title("Graph Title")<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_111.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_111.png" alt=""></figure>
 <p><em>Elle oluşturulmuş figure ve axes</em></p>
 <ul><li><strong>dpi</strong>: Çözünürlüktür. Artırırsak çözünürlük de artar (<code>plt.figure(dpi=100)</code>).</li><li><strong>`.legend()`</strong>: <code>label</code> verdiğimiz çizgilerin gözükmesi (gösterge) için eklenir.</li></ul>
 <pre>new_figure = plt.figure(dpi=100)<br>new_axes = new_figure.add_axes([0.1, 0.1, 0.5, 0.5])<br>new_axes.plot(np_arr1, np_arr1**2, label="numpy array **2")<br>new_axes.plot(np_arr1, np_arr1**3, label="numpy array **3")<br>new_axes.legend()<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_112.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_112.png" alt=""></figure>
 <p><em>legend ile çizgilerin adlarını göstermek</em></p>
 <h3>4.5 plt.subplots(): Hazır figür ve eksen</h3>
 <p><code>plt.subplots()</code> bize <strong>hazır bir figür ve axes (eksen)</strong> döndürür: <code>my_fig, my_axes = plt.subplots()</code>. Bu, endüstride en yaygın kullanım biçimlerinden biridir; çünkü satır/kolon sayısını verip birden fazla eksen üretmeyi de aynı fonksiyon yapar (EDA bölümünde 4x4'lük ızgarada kullanacağız).</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_113.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_113.png" alt=""></figure>
 <p><em>plt.subplots(): figure ve axes tipleri</em></p>
 <pre>my_fig, my_axes = plt.subplots()<br>my_axes.plot(data1, data2)<br>my_axes.plot(data2, data1)<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_114.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_114.png" alt=""></figure>
 <p><em>Aynı eksende iki çizgi</em></p>
 <p>RGB renklerinden farklı bir renk istiyorsanız Google'a "hexadecimal code" yazıp renklerin kodlarına bakabilirsiniz:</p>
 <pre>my_axes.plot(data1, data2, color="#260701")<br>my_axes.plot(data2, data1, color="#34c212")</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_115.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_115.png" alt=""></figure>
 <p><em>Hex kodlarıyla renk belirleme</em></p>
 <h3>4.6 Çizgi stilleri</h3>
 <p>Matplotlib'te her çizginin görünüşü parametrelerle ince ayarlanabilir:</p>
@@ -436,19 +436,19 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <li><strong><code>markersize</code></strong> — İşaretçi boyutu</li>
 <li><strong><code>markerfacecolor</code></strong> — İşaretçinin iç rengi</li>
 </ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_116.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_116.png" alt=""></figure>
 <p><em>Farklı stil parametrelerinin kodu</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_117.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_117.png" alt=""></figure>
 <p><em>Sonuç: kalınlık, çizgi tipi ve marker farkları</em></p>
 <h3>4.7 Scatter, histogram ve boxplot</h3>
 <ul><li><strong>Scatter plot</strong>: Veri setindeki verilerin noktalarla ifade edildiği grafiklerdir.</li><li><strong>Histogram</strong>: Numerik değişkenlerin dağılımlarını görürüz.</li><li><strong>Box plot</strong>: Çok önemli çıkarımlar yapılabilir (Seaborn bölümünde ayrıntılı).</li></ul>
-<pre>plt.scatter(data1, data2)<br>plt.show()<br><br>new_array = np.random.randint(0, 50, 20)<br>plt.hist(new_array)<br>plt.show()<br><br>plt.boxplot(new_array)<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_118.png" alt=""></figure>
+<pre>plt.scatter(data1, data2)<br>plt.show()<br>new_array = np.random.randint(0, 50, 20)<br>plt.hist(new_array)<br>plt.show()<br>plt.boxplot(new_array)<br>plt.show()</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_118.png" alt=""></figure>
 <p><em>Scatter plot</em></p>
 <p>Histogramda önceki (doğrusal) datayı kullanmadık, çünkü lineer olduğu için mantıklı bir dağılım göstermeyecekti. Onun yerine rastgele sayılar üretip dağılımını gözlemledik. <strong>Boxplot</strong> ise verinin dağılımını, medyanını ve varsa aykırı değerleri gösteren bir grafiktir.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_119.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_119.png" alt=""></figure>
 <p><em>Rastgele sayıların histogramı</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_120.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_120.png" alt=""></figure>
 <p><em>Matplotlib boxplot</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Notlarda özellikle vurgulanan bir kariyer ipucu: <strong>Kaggle, veri bilimcinin vazgeçilmez bir sitesidir. İş başvurularında Kaggle profilini göstermek faydalı olacaktır.</strong></blockquote>
 <h2>Bölüm 5 – Seaborn: Daha Güçlü, Daha Anlamlı Grafikler</h2>
@@ -456,120 +456,120 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <p>Bu bölümde sporcuların boy, kilo, cinsiyet, madalya ve yaş verilerinden oluşan bir veri setiyle çalışılıyor (<code>Height</code>, <code>Weight</code>, <code>Sex</code>, <code>Medal</code>, <code>Age</code>, <code>Season</code> kolonları).</p>
 <h3>5.1 scatterplot ve hue / style / size</h3>
 <pre>sns.set_style("whitegrid")<br>sns.scatterplot(x="Height", y="Weight", data=data)<br>plt.xlabel("Height of Atheletes")<br>plt.ylabel("Weight of Atheletes")<br>plt.title("Atheletes weight vs height")<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_121.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_121.png" alt=""></figure>
 <p><em>Boy - kilo scatter plot</em></p>
 <p><strong>`hue`</strong>: neyi vurgulamak istiyorsanız o kolonu yazarsınız. Cinsiyete göre ayırmak istediğimiz için <code>hue="Sex"</code> yazıyoruz: iki cinsiyet iki farklı renkle çizilir ve aralarındaki fark birden görünür hâle gelir.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_122.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_122.png" alt=""></figure>
 <p><em>hue="Sex" ile cinsiyete göre renklendirme</em></p>
 <p>Kolon içindeki benzersiz (unique) değerleri görmek için Pandas'ın <code>unique()</code> fonksiyonu kullanılır:</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_123.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_123.png" alt=""></figure>
 <p><em>data["Medal"].unique() ve data["Sex"].unique()</em></p>
 <ul><li><strong>`style="Medal"`</strong>: Madalya alanların madalyasına göre her birine ayrı simge (marker) verir.</li><li><strong>`size="Age"`</strong>: Yaş büyüklüğüne göre nokta boyutunu değiştirir.</li></ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_124.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_124.png" alt=""></figure>
 <p><em>style="Medal" ile farklı işaretçiler</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_125.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_125.png" alt=""></figure>
 <p><em>size="Age" ile yaşa göre nokta boyutu</em></p>
 <h3>5.2 lineplot</h3>
 <p>Çizgi grafiğinde (<code>sns.lineplot</code>) genelde boy ve kilonun <strong>doğru orantılı şekilde arttığı</strong> bir grafik karşımıza çıkar.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_126.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_126.png" alt=""></figure>
 <p><em>lineplot: boy arttıkça kilo artar</em></p>
 <h3>5.3 displot ve kde: Dağılımları görmek</h3>
 <p>Boy dağılımını <strong>Normal Dağılım</strong> olarak gösterebiliriz. <code>sns.displot()</code> fonksiyonu kullanılır ve normal dağılıma benzer bir grafik ortaya çıkar. Histogram gibi değil de çizgi gibi görünsün istersek <code>kind="kde"</code> kullanmalıyız. <strong>kde = Kernel Density Estimate.</strong></p>
 <pre>sns.displot(x="Height", hue="Sex", data=data)                 # histogram<br>sns.displot(x="Height", hue="Sex", data=data, kind="kde")     # yumuşak çizgi</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_127.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_127.png" alt=""></figure>
 <p><em>Boy dağılımı (histogram)</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_128.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_128.png" alt=""></figure>
 <p><em>Boy dağılımı (kde)</em></p>
 <h3>5.4 barplot ve catplot</h3>
 <ul><li><code>sns.barplot()</code> bar şeklinde gösterir (örnek: madalya türüne göre boy, cinsiyet kırılımıyla).</li><li><code>sns.catplot()</code> <code>barplot</code> gibi boya göre ayırabilir; üstüne <strong>başka parametrelere göre de ayırmamıza</strong> izin verir (örnek: <code>col="Season"</code> ile yaz/kış olimpiyatlarını iki panele böler).</li></ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_129.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_129.png" alt=""></figure>
 <p><em>barplot</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_130.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_130.png" alt=""></figure>
 <p><em>catplot ile mevsime göre ayrı paneller</em></p>
 <h3>5.5 Korelasyon ve heatmap</h3>
 <p>DataFrame'in korelasyonuna da bakabiliriz: <code>data.corr(numeric_only=True)</code>. Parametre almasının nedeni, DataFrame içinde numerik olmayan değerlerin (isim, mevsim gibi) de olmasıdır.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_131.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_131.png" alt=""></figure>
 <p><em>Korelasyon matrisi</em></p>
 <p><strong>`sns.heatmap()`</strong> kolonlar arasındaki ilişkiyi açıklamak için kullanılır. Notlardaki renk kuralı: aralarında ne kadar iyi korelasyon varsa o kadar <strong>açık</strong>, ne kadar yoksa o kadar <strong>koyu</strong> renkle gösterilir. <code>annot=True</code> sayıları hücrelerin içine de yazar.</p>
 <pre>sns.heatmap(data.corr(numeric_only=True))<br>sns.heatmap(data.corr(numeric_only=True), annot=True)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_132.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_132.png" alt=""></figure>
 <p><em>Heatmap</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_133.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_133.png" alt=""></figure>
 <p><em>annot=True: değerler de görünür</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Korelasyon matrisi/heatmap, bir veri setine ilk baktığınızda "hangi kolonlar birbiriyle ilişkili?" sorusunun en hızlı cevabıdır. Boy-kilo korelasyonunun yüksek (0.8 civarı), ID gibi kolonların ise diğer her şeyle sıfıra yakın çıkması beklenen bir sonuçtur.</blockquote>
 <h3>5.6 Box Plot: Bir grafikte en çok bilgi</h3>
 <p>Box plot, <strong>tek bir grafik içerisinde</strong> medyan değerlerini, quartile değerlerini (%25, %50, %75), minimum ve maksimum değerleri (whisker: min-max, 1.5 <em>IQR) ve outlier</em>* değerleri gösterir. Ayrıca <code>figsize</code> parametresi boyut ayarlamaya yarar (çözünürlük için <code>dpi</code> vardı); box plot'u daha iyi görmek için boyutunu ayarlıyoruz.</p>
 <pre>data = np.array([5,7,9,15,20,22,25,30,32,35,37,40,50,55,60,100])<br>plt.figure(figsize=(6, 5))<br>sns.boxplot(y=data)<br>plt.title("Box Plot")<br>plt.ylabel("Data Value")<br>plt.grid(True)<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_134.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_135.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_134.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_135.png" alt=""></figure>
 <p><em>Box plot ve outlier (100 değeri boş halka olarak görünür)</em></p>
 <h4>Box plot nasıl okunur?</h4>
 <ul><li><strong>Medyan</strong>: mavi dikdörtgenin ortasındaki çizgidir.</li><li><strong>Dikdörtgenin tamamı</strong>: verinin daha yoğun dağıldığı yeri gösterir; üst kenarı %75, alt kenarı %25'i gösterir.</li><li><strong>Üstteki ve alttaki çizgiler (whisker)</strong>: min ve max değerleri gösterir (bu örnekte 5-60).</li><li><strong>İçi boş yuvarlak</strong>: outlier (aykırı değer) kısmını gösterir.</li></ul>
 <p>Örnek senaryo: Üniversite öğrencilerinin gelirleri üzerine çalışıyorsunuz ve bir öğrenci kendi işini kurmuş; diğerlerine göre çok fazla para kazanıyor (<strong>outlier</strong>). Grafiğe bakarak bu kişiyi tespit edebilir ve diziden çıkarabilirsiniz. Bu aykırı değer birçok metriği bozabilir. Outlier çıkarıldığında oluşan grafik:</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_136.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_136.png" alt=""></figure>
 <p><em>Outlier çıkarıldıktan sonra box plot</em></p>
 <p>Bir de tam tersini düşünün: dizide değerler yukarıda toplanmışsa medyan (mavi dikdörtgen içindeki siyah çizgi) çok daha yukarıda görünür ve önceki grafiğe göre <strong>daha dengesiz</strong> bir grafik ortaya çıkar.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_137.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_137.png" alt=""></figure>
 <p><em>Değerlerin yukarıda yoğunlaştığı, dengesiz box plot</em></p>
 <blockquote><strong>MÜLAKAT / TEST İPUCU:</strong> Box plot okuma (medyan, %25-%75 aralığı, whisker, outlier) hem testlerde hem mülakatta çıkabilecek temel bir konudur. Outlier'ın neden sorun olduğunu bir örnekle anlatabilmeyi (gelir çalışmasındaki girişimci öğrenci) unutmayın.</blockquote>
 <h3>5.7 Gerçek hayat örneği: Titanic</h3>
 <p>Seaborn'un kendi veri setleri vardır; <code>sns.load_dataset("titanic")</code> yazarak indirebiliriz. Hata alırsanız Titanic dosyasını indirip proje klasörüne koyarak önceki bölümlerde olduğu gibi <code>read_csv</code> ile okuyabilirsiniz. Veri seti 891 satır, 15 kolondan oluşur (<code>survived</code>, <code>pclass</code>, <code>sex</code>, <code>age</code>, <code>fare</code>, <code>embarked</code>, <code>class</code>, <code>deck</code>...).</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_138.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_138.png" alt=""></figure>
 <p><em>Titanic veri seti</em></p>
 <p>Yan yana iki box plot çizmek için <code>plt.subplot(1, 2, 1)</code> ve <code>plt.subplot(1, 2, 2)</code> kullanıyoruz (1 satır, 2 kolon; 1. ve 2. grafik):</p>
-<pre>plt.figure(figsize=(13, 8))<br><br>plt.subplot(1, 2, 1)<br>sns.boxplot(x="class", y="age", data=df)<br>plt.title("Age by Class")<br><br>plt.subplot(1, 2, 2)<br>sns.boxplot(x="class", y="fare", data=df)<br>plt.title("Fare by Class")<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_139.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_140.png" alt=""></figure>
+<pre>plt.figure(figsize=(13, 8))<br>plt.subplot(1, 2, 1)<br>sns.boxplot(x="class", y="age", data=df)<br>plt.title("Age by Class")<br>plt.subplot(1, 2, 2)<br>sns.boxplot(x="class", y="fare", data=df)<br>plt.title("Fare by Class")<br>plt.show()</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_139.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_140.png" alt=""></figure>
 <p><em>Sınıfa göre yaş ve bilet ücreti dağılımı</em></p>
 <h4>Grafikten çıkan yorumlar</h4>
 <ul><li><strong>Yaş:</strong> Birinci sınıf yolcuların yaşları daha yüksek (medyan 37-38 civarı). Ancak istisnalar var: ikinci ve üçüncü sınıfta 60-70 yaşlarında outlier'lar görülüyor.</li><li><strong>Ücret:</strong> Birinci sınıfın verdiği ücret en yüksek. İkinci ve üçüncü sınıflarda ise bu sınıflara göre çok yüksek para ödeyen (100'e yakın ve üzeri) outlier değerler var; birinci sınıfta da 500'ü aşan uç bir değer görünüyor.</li></ul>
 <h2>Bölüm 6 – EDA Uygulaması: Şarap Kalitesi Veri Seti</h2>
 <p><strong>EDA (Exploratory Data Analysis – Keşifçi Veri Analizi)</strong>, veri biliminin temellerindendir. Kısaca: veri geldiğinde onu anlamak. Veri temizleme, ön işleme, içgörü çıkarma, görselleştirme ve raporlama bu döngünün parçalarıdır; Pandas, NumPy, Matplotlib ve Seaborn da bu döngünün araçlarıdır.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_141.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_141.png" alt=""></figure>
 <p><em>EDA döngüsü: temizleme, ön işleme, içgörü, görselleştirme, raporlama</em></p>
 <p>Bu ödevde bir şarap veri seti yorumlanıyor. Elimizdeki veri setinde <strong>13 kolon</strong> var: biri <code>Id</code> kolonu, <strong>11 kolon input</strong> (fixed acidity, volatile acidity, citric acid, residual sugar, chlorides, free sulfur dioxide, total sulfur dioxide, density, pH, sulphates, alcohol), kalan <code>quality</code> kolonu ise <strong>output</strong>tur. Amaç: input kolonların output kolonunu nasıl etkilediğini gözlemlemek.</p>
 <h3>6.1 İlk bakış: describe ve info</h3>
 <p>Örneğin <code>density</code> kolonunun standart sapmasına baktığımızda oldukça küçük bir değer görürüz. Notların yorumu: tüm satırlar için neredeyse aynı değeri verdiğinden bu kolonun kaliteyi etkilemeyeceğini gösterir. <code>info()</code> çıktısından da boş veri olmadığını ve verilerin numerik olduğunu görürüz.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_142.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_142.png" alt=""></figure>
 <p><em>describe(): 1143 satır, 13 kolon</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_143.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_143.png" alt=""></figure>
 <p><em>info(): boş veri yok, hepsi numerik</em></p>
 <p><code>quality</code> kolonunun aldığı değerler ve <code>quality</code>'ye göre gruplayıp kolon ortalamalarına bakmak, kaliteyi nasıl etkilediklerini gözlemlemenin ilk adımıdır:</p>
 <pre>df['quality'].unique()            # array([5, 6, 7, 4, 8, 3])<br>df.groupby('quality').mean()      # her kalite seviyesi için kolon ortalamaları</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_144.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_145.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_144.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_145.png" alt=""></figure>
 <p><em>Kalite seviyesine göre ortalamalar</em></p>
 <h3>6.2 Korelasyon: Kaliteyi ne etkiliyor?</h3>
 <pre>plt.figure(figsize=(10, 8))<br>sns.heatmap(df.corr(numeric_only=True), annot=True)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_146.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_146.png" alt=""></figure>
 <p><em>Şarap veri setinin korelasyon heatmap'i</em></p>
 <ul><li>Kaliteyi <strong>en çok etkileyen faktör alkoldür (0.48).</strong></li><li><code>quality</code> ile negatif korelasyonu olan değişkenler (volatile acidity, free sulfur dioxide, total sulfur dioxide, density, pH) kaliteyi olumsuz etkiler; "olmasalar daha iyi olurdu" diyebiliriz.</li></ul>
 <h3>6.3 quality dağılımı ve tek tek dağılımlar</h3>
 <p>Daha önce görmediğimiz bir şekilde <code>quality</code> kolonunu grafikle gösterelim: <code>value_counts()</code> bir Series döndürür ve <code>.plot(kind="bar")</code> ile doğrudan çizilebilir. Grafik, verinin kalite 5 ve 6 etrafında yığıldığını, 3, 4 ve 8 gibi uçların çok az olduğunu gösterir.</p>
 <pre>df["quality"].value_counts().plot(kind="bar")<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_147.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_147.png" alt=""></figure>
 <p><em>quality dağılımı: çoğunluk 5 ve 6</em></p>
 <p>Alkol için histogram çizdirdiğimizde <strong>log-normal</strong> dağılım, pH için histogram çizdirdiğimizde <strong>normal dağılım</strong> gösterdiğini görürüz. Bu bilgi ileride eksik veri doldurma ve dönüşüm kararlarında işe yarar.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_148.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_148.png" alt=""></figure>
 <p><em>Alkol: sağa çarpık (log-normal benzeri) dağılım</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_149.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_149.png" alt=""></figure>
 <p><em>pH: normal dağılıma yakın</em></p>
 <h3>6.4 pairplot: Tüm ikilileri tek seferde görmek</h3>
 <p>Daha öncesinde görmediğimiz ama ileride karşımıza çıkabilecek bir konu: <strong>`sns.pairplot(df)`</strong>. İki farklı kolonu kıyaslar ve aralarındaki ilişkiyi çıkarmaya çalışır. Bunu scatter ile yapar ve tüm kolonlar için uygular. Örneğin ilk satırda 8. kolonda y ekseni (<code>fixed acidity</code>) ve x ekseni (<code>density</code>) arasında doğru bir orantı söz konusudur.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_150.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_150.png" alt=""></figure>
 <p><em>sns.pairplot(df)</em></p>
 <h3>6.5 Kalite ile alkol ilişkisi: boxplot ve scatter</h3>
 <pre>sns.boxplot(x="quality", y="alcohol", data=df)<br>sns.scatterplot(x="fixed acidity", y="density", hue="quality", data=df)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_151.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_151.png" alt=""></figure>
 <p><em>Kalite - alkol box plot'u</em></p>
 <ul><li>Kalite 5'in alkol aralığının çok fazla olduğu (çok sayıda outlier) çıkarılabilir.</li><li>Kalite arttıkça alkol seviyesinin de arttığı net şekilde görülür (medyan değerlerine bakarak karar verebilirsiniz).</li><li><code>fixed acidity</code> ile <code>density</code> arasında doğru orantı vardır. Kaliteye göre bakılırsa çok bir yorum yapamıyoruz ama aşağı doğru indikçe koyu renkler yani kalitesi artıyor gibi.</li></ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_152.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_152.png" alt=""></figure>
 <p><em>fixed acidity - density scatter plot'u (hue=quality)</em></p>
 <h3>6.6 Bonus: Tüm kolonların dağılımını tek kodla çizmek</h3>
 <p>Kaggle'a veya GitHub'a bir şeyler koyarken ya da mülakatlara daha düzgün hazırlanmak istediğinizde kullanabileceğiniz (zorunlu olmayan) bir kalıp: bütün kolonların dağılımını (distribution) bir ızgarada çizmek.</p>
 <ol><li><code>df.columns</code> ile kolon isimlerini alın.</li><li><code>plt.subplots()</code> içinde 2 değer döner (figure ve axes); satır ve kolon sayısını verin (burada 4x4) ve <code>figsize</code> ile boyutu ayarlayın.</li><li><code>for i, column in enumerate(columns)</code> ile her kolonu bir eksene atayın (0. indeks fixed acidity, 1. indeks volatile acidity...).</li><li><code>sns.kdeplot(data=df, x=column, hue=df.quality, ax=ax[i])</code> ile dağılımı çizin. <code>hue</code> için <code>df.quality</code> veya <code>df["quality"]</code> ikisi de olur.</li><li><code>ax = ax.flatten()</code>: axes "liste içinde liste" şeklinde döndüğü için hata alınmasın diye düzleştirilir.</li><li>Kullanılmayan (fazla) eksenler <code>axis("off")</code> ile kapatılır; başlıklar için <code>set_title</code>, üst üste binen x yazıları için <code>set_xlabel(None)</code> kullanılır.</li></ol>
-<pre>columns = df.columns<br>fig, ax = plt.subplots(4, 4, figsize=(16, 15))<br>ax = ax.flatten()<br><br>for i, column in enumerate(columns):<br>    sns.kdeplot(data=df, x=column, hue=df.quality, ax=ax[i])<br>    ax[i].set_title(f"{column} Distribution")<br>    ax[i].set_xlabel(None)<br><br>for i in range(i + 1, len(ax)):<br>    ax[i].axis("off")</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_153.png" alt=""></figure>
+<pre>columns = df.columns<br>fig, ax = plt.subplots(4, 4, figsize=(16, 15))<br>ax = ax.flatten()<br>for i, column in enumerate(columns):<br>    sns.kdeplot(data=df, x=column, hue=df.quality, ax=ax[i])<br>    ax[i].set_title(f"{column} Distribution")<br>    ax[i].set_xlabel(None)<br>for i in range(i + 1, len(ax)):<br>    ax[i].axis("off")</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_153.png" alt=""></figure>
 <p><em>Notlardaki kodun son hali</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Şarap veri seti bu notlarda "mükemmel bir dataset" olarak anılıyor: eksik veri yok, tüm değerler numerik. Gerçek hayatta böyle veri gelmez; bir sonraki bölüm tam olarak bu yüzden var.</blockquote>
 <h2>Bölüm 7 – Feature Engineering: Veriyi Modele Hazırlamak</h2>
@@ -584,80 +584,80 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <li><strong>MAR (Missing at Random)</strong> — Deminki kadar rastgele değil. Eksik veriler bir şekilde diğer gözlemlenen değişkenlerle alakalıdır. — <em>Örnek:</em> Medikal anket: erkekler kilosunu girmeye utanıyor, kadınlar giriyor. Cinsiyet kolonuyla bağlantılı. — <em>Etkisi:</em> Sıkıntı oluşturabilir. Regresyon gibi gelişmiş doldurma yöntemleri veya ilişkili özellikler kullanmak yararlıdır.</li>
 <li><strong>MNAR (Missing Not at Random)</strong> — Eksik veriler rastgele değil; eksikliğin sebebi verinin kendisine bağlı. — <em>Örnek:</em> Gelir anketi: geliri yüksek olanlar gelirlerinden bahsetmek istemiyor. — <em>Etkisi:</em> Ortalama, medyan gibi metrikleri etkiler (yanlılık/bias yaratabilir). Alan bilgisi veya özel teknikler gerekir.</li>
 </ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_154.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_154.png" alt=""></figure>
 <p><em>Ders slaytı: eksik veri türleri</em></p>
 <h3>7.2 Eksik veriyle başa çıkma yöntemleri</h3>
 <h4>Yöntem 1 – Silmek (eksik oranı çok düşükse)</h4>
 <p>Eksik olan datalar çok azsa (örneğin veri setinin <strong>%5'inden azsa</strong>, yani veri kaybı çok azsa) onları komple çıkartabiliriz; modeli anlamlı biçimde etkilemez.</p>
 <pre>df.dropna(inplace=True)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_155.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_155.png" alt=""></figure>
 <h4>Yöntem 2 – Imputation (doldurma)</h4>
 <p>Eğer veri çok gidecekse <strong>imputation</strong> yapılır: boş olan verileri doldururuz. Üç ana yol vardır:</p>
 <ul><li><strong>Mean / Median / Mode imputation</strong>: Ortalama (sayısal veri), medyan (çarpık sayısal veri) veya mod (kategorik veri) koyulur.</li><li><strong>Forward / Backward Fill</strong>: Zamanlı verilerde kullanılır. Her günün satış datası vardır ama bazı günler kaydedilmemiştir; eski (veya sonraki) veriye bakarak yerine ne geleceğine karar verilir.</li><li><strong>Predictive Imputation</strong>: Boş değeri, makine öğrenmesi algoritmalarıyla (regresyon, KNN gibi) tahmin etmek.</li></ul>
-<pre>df['Age'].fillna(df['Age'].mean(), inplace=True)     # Mean imputation<br>df.fillna(method='ffill', inplace=True)               # Forward fill<br><br>from sklearn.impute import KNNImputer<br>imputer = KNNImputer(n_neighbors=3)<br>df[['Age', 'Salary']] = imputer.fit_transform(df[['Age', 'Salary']])</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_156.png" alt=""></figure>
+<pre>df['Age'].fillna(df['Age'].mean(), inplace=True)     # Mean imputation<br>df.fillna(method='ffill', inplace=True)               # Forward fill<br>from sklearn.impute import KNNImputer<br>imputer = KNNImputer(n_neighbors=3)<br>df[['Age', 'Salary']] = imputer.fit_transform(df[['Age', 'Salary']])</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_156.png" alt=""></figure>
 <p><em>Ders slaytı: imputation yöntemleri</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> <strong>Karar kuralı:</strong> Boş kısım azsa onları doldurmak mantıklıdır. Örneğin verinin %90'ı boşsa doldurmaya uğraşmadan direkt sil (kolonu at).</blockquote>
 <h4>Yöntem 3 – Eksiklik bayrağı (Missing Indicator)</h4>
 <p>Yeni bir kolon açılır ve "bu satırda veri eksik miydi?" bilgisini gösteren bir bayrak (True/False veya 0/1) konur. Veriyi anlamlandırmak açısından işe yaramaz ama makine öğrenmesinde model "eksik datalar varsa bana söyle, göze almayayım" diyebilir.</p>
 <pre>df['Age_missing'] = df['Age'].isnull().astype(int)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_157.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_157.png" alt=""></figure>
 <h4>Yöntem 4 – Alan bilgisi (Domain Knowledge)</h4>
 <p>Daha istatistiksel bir konudur. Bir çalışma yapılıyor ve verinin <strong>MNAR</strong> olduğunu biliyorsunuz; yani yüksek maaş alanların maaşını söylemeyeceğini biliyorsunuz. Çalışmayı "onlar söylemedi" diye çöpe atmak istemezsiniz; bunun için kendiniz bir eşik veya numara belirleyebilirsiniz (örneğin eksik gelirleri "yüksek gelir" grubuna almak). Ama bu tahmini yapmak için o alanda uzman olmanız gerekir.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_158.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_158.png" alt=""></figure>
 <blockquote><strong>ÖZET:</strong> Pratikte <strong>daha çok 1. ve 2. yöntem tercih edilir; 3. ve 4. az kullanılır</strong>, duruma göre bakılır.</blockquote>
 <h3>7.3 Uygulama: Titanic verisinde eksik değerler</h3>
 <p>Önce hangi kolonda kaç boş değer var, ona bakıyoruz. <code>isnull()</code> her hücre için True/False döndürür; <code>.sum()</code> ile birleştirince kolon başına boş sayısını görürüz.</p>
 <pre>df.shape              # (891, 15)<br>df.isnull().sum()     # age: 177, embarked: 2, deck: 688, embark_town: 2</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_159.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_160.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_159.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_160.png" alt=""></figure>
 <p><em>Kolon başına eksik veri sayısı</em></p>
 <p>891 verinin <strong>688'inde `deck` yok.</strong> Bütün eksik satırları sil demek mantıksız olur: <code>df.dropna()</code> dediğimizde satır sayısı <strong>891'den 182'ye</strong> düşer, yani verinin büyük kısmı kaybolur.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_161.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_161.png" alt=""></figure>
 <p><em>dropna() sonrası (182, 15)</em></p>
 <p>Çözüm olarak <code>deck</code> kolonu silinebilir; 891'den 688'inin olmaması silinmesi için mantıklıdır. <code>df.dropna(axis=1)</code> yazarsak eksik verisi olan <strong>4 kolonun hepsi</strong> silinir ve kolon sayısı 11'e düşer (<code>axis=1</code> dedik çünkü <code>axis=0</code> satır içindir ve default değeridir). Ama bu sefer sadece 2 eksik verisi olan kolonlar için de kolon kaybettik, bu da mantıklı olmadı.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_162.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_162.png" alt=""></figure>
 <p><em>dropna(axis=1): 11 kolon kaldı</em></p>
 <h4>Sayısal kolon: yaşı doldurmak (ortalama mı, medyan mı?)</h4>
 <p>Önce yaş kolonunun histogramına bakıyoruz: <strong>log-normale benzer</strong> bir dağılım görünür (mavi çizgi <code>kde=True</code> ile gelen dağılım eğrisidir).</p>
 <pre>sns.histplot(df["age"], kde=True)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_163.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_163.png" alt=""></figure>
 <p><em>Yaş dağılımı</em></p>
 <pre>df["Age_Mean"]   = df["age"].fillna(df["age"].mean())<br>df["Age_Median"] = df["age"].fillna(df["age"].median())</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_164.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_165.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_164.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_165.png" alt=""></figure>
 <p><em>888. satır: NaN yerine ortalama (29.699) yazıldı</em></p>
 <blockquote><strong>MÜLAKAT / TEST İPUCU:</strong> <strong>Neye göre boş dataya ortalama, mod veya medyan koyulur?</strong></blockquote>
 <blockquote><strong>Çok fazla outlier varsa medyan koymak daha mantıklıdır.</strong> Data daha çok <strong>Gaussian (Normal) dağılıma</strong> benziyorsa ortalamayı koymak daha mantıklıdır; çünkü çok outlier yoktur demektir.</blockquote>
 <blockquote><strong>Mod</strong> ise genelde <strong>kategorik</strong> değerler için yapılır.</blockquote>
 <blockquote>Outlier var mı yok mu, boxplot çizdirerek karar verebilirsiniz.</blockquote>
 <p>Yaş kolonunun boxplot'unda outlier değerler görülüyor, dolayısıyla medyan kullanılabilir. Bu veri setinde ortalama ve medyan birbirine yakın olduğundan ikisi de kullanılabilir (ortalama ile 29.7, medyan ile 28.0 doldurulmuş):</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_166.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_166.png" alt=""></figure>
 <p><em>Yaş kolonunun boxplot'u</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_167.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_168.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_167.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_168.png" alt=""></figure>
 <p><em>Ortalama ve medyan benzer değerler veriyor</em></p>
 <h4>Kategorik kolon: embarked'ı mod ile doldurmak</h4>
 <p><code>embarked</code> kategorik bir değişkendir ve 3 değeri vardır (<code>S</code>, <code>C</code>, <code>Q</code>). Boş olan satırlar 61 ve 829 numaralı satırlardır. Bu iki satır silinebilir veya doldurulabilir; biz <strong>mod</strong> ile dolduruyoruz. Mod bulma işlemi biraz farklıdır, bu kodu aklınızda bulundurun:</p>
-<pre>df["embarked"].isnull()                      # True olan 61 ve 829<br>df["embarked"].unique()                      # ['S', 'C', 'Q', nan]<br><br>mode_value = df[df["embarked"].notna()]["embarked"].mode()[0]     # 'S'<br>df["embarked_mode"] = df["embarked"].fillna(mode_value)<br>df["embarked_mode"].isnull().sum()            # 0</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_169.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_170.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_171.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_172.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_173.png" alt=""></figure>
+<pre>df["embarked"].isnull()                      # True olan 61 ve 829<br>df["embarked"].unique()                      # ['S', 'C', 'Q', nan]<br>mode_value = df[df["embarked"].notna()]["embarked"].mode()[0]     # 'S'<br>df["embarked_mode"] = df["embarked"].fillna(mode_value)<br>df["embarked_mode"].isnull().sum()            # 0</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_169.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_170.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_171.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_172.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_173.png" alt=""></figure>
 <p><em>embarked: 2 eksik → embarked_mode: 0 eksik</em></p>
 <h3>7.4 Dengesiz veri (Imbalanced Data): Upsampling, Downsampling, SMOTE</h3>
 <p>Elimizde <strong>dengesiz</strong> bir veri seti olduğunu düşünelim: kanser hastalarının 100, kanser olmayanların 900 tane olduğu bir veri. Böyle bir veriyle model kurarsak ortaya çıkan sonuç gerçekten doğruyu verecek mi? Oluşturacağımız dataset, başka biri tarafından kurulacak modele düzgün bir altyapı sağlar mı?</p>
 <h4>Deney verisini oluşturmak</h4>
 <ul><li><code>np.random.seed(42)</code>: <strong>tutarlı bir rastgelelik</strong> oluşturmak için yazılır (her çalıştırmada aynı sayılar gelir). 42 genel olarak popüler kullanılır; belirli bir algoritmaya göre rastgelelik oluşturulur (genel kültür).</li><li><code>np.random.normal(loc, scale, size)</code>: <strong>loc</strong> ortalama değeri, <strong>scale</strong> standart sapma değeri, <strong>size</strong> kaç veri üretileceği.</li></ul>
-<pre>np.random.seed(42)<br><br>setno1 = 900<br>setno2 = 100<br><br>df1 = pd.DataFrame({<br>    "feature_1": np.random.normal(loc=0, scale=1, size=setno1),<br>    "feature_2": np.random.normal(loc=0, scale=1, size=setno1),<br>    "target":    [0] * setno1<br>})<br>df2 = pd.DataFrame({<br>    "feature_1": np.random.normal(loc=0, scale=1, size=setno2),<br>    "feature_2": np.random.normal(loc=0, scale=1, size=setno2),<br>    "target":    [1] * setno2<br>})<br><br>df = pd.concat([df1, df2]).reset_index(drop=True)<br>df["target"].unique()         # array([0, 1])<br>df["target"].value_counts()   # 0 -&gt; 900, 1 -&gt; 100</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_174.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_175.png" alt=""></figure>
+<pre>np.random.seed(42)<br>setno1 = 900<br>setno2 = 100<br>df1 = pd.DataFrame({<br>    "feature_1": np.random.normal(loc=0, scale=1, size=setno1),<br>    "feature_2": np.random.normal(loc=0, scale=1, size=setno1),<br>    "target":    [0] * setno1<br>})<br>df2 = pd.DataFrame({<br>    "feature_1": np.random.normal(loc=0, scale=1, size=setno2),<br>    "feature_2": np.random.normal(loc=0, scale=1, size=setno2),<br>    "target":    [1] * setno2<br>})<br>df = pd.concat([df1, df2]).reset_index(drop=True)<br>df["target"].unique()         # array([0, 1])<br>df["target"].value_counts()   # 0 -&gt; 900, 1 -&gt; 100</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_174.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_175.png" alt=""></figure>
 <p><em>İki DataFrame'in oluşturulması</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_176.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_176.png" alt=""></figure>
 <p><em>concat + reset_index(drop=True): 1000 satır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_177.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_178.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_177.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_178.png" alt=""></figure>
 <p><em>value_counts(): 900 çoğunluk, 100 azınlık</em></p>
 <p>Bu dengesizliği gidermenin iki temel yolu var:</p>
 <ul>
@@ -667,40 +667,40 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 </ul>
 <h4>scikit-learn resample ile upsampling</h4>
 <p>Upsample yaparken kafamıza göre data artırmıyoruz. <strong>sklearn</strong> kütüphanesini makine öğreniminde devamlı kullanacağız (sınıflandırma, kümelendirme vb.). <code>resample</code> fonksiyonu sample boyutunu azaltır ya da artırır. Parametreleri: (1) DataFrame, (2) <code>replace</code> (yerine koyarak seçim), (3) <code>n_samples</code> (ne kadar uzunlukta olacağı), (4) <code>random_state</code> (üstte yazdığımız 42).</p>
-<pre>from sklearn.utils import resample<br><br>df_minority = df[df["target"] == 1]      # 100 satır<br>df_majority = df[df["target"] == 0]      # 900 satır<br><br>df_minority_upsample = resample(df_minority, replace=True,<br>                                n_samples=len(df_majority), random_state=42)<br><br>df_upsampled = pd.concat([df_majority, df_minority_upsample])<br>df_upsampled["target"].value_counts()     # 0 -&gt; 900, 1 -&gt; 900   (1800 satır)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_179.png" alt=""></figure>
+<pre>from sklearn.utils import resample<br>df_minority = df[df["target"] == 1]      # 100 satır<br>df_majority = df[df["target"] == 0]      # 900 satır<br>df_minority_upsample = resample(df_minority, replace=True,<br>                                n_samples=len(df_majority), random_state=42)<br>df_upsampled = pd.concat([df_majority, df_minority_upsample])<br>df_upsampled["target"].value_counts()     # 0 -&gt; 900, 1 -&gt; 900   (1800 satır)</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_179.png" alt=""></figure>
 <p><em>Azınlık (target=1): 100 satır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_180.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_180.png" alt=""></figure>
 <p><em>Çoğunluk (target=0): 900 satır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_181.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_182.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_181.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_182.png" alt=""></figure>
 <p><em>resample çıktısı: 900 satır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_183.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_183.png" alt=""></figure>
 <p><em>Upsample sonrası birleştirme: 1800 satır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_184.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_184.png" alt=""></figure>
 <p><em>Artık 900 - 900</em></p>
 <p>Aynı işlem downsample için de yapılabilir (bu sefer çoğunluk, azınlığın uzunluğuna indirilir):</p>
 <pre>df_majority_downsample = resample(df_majority, replace=True,<br>                                  n_samples=len(df_minority), random_state=42)<br>df_downsampled = pd.concat([df_majority_downsample, df_minority])<br>df_downsampled["target"].value_counts()   # 0 -&gt; 100, 1 -&gt; 100   (200 satır)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_185.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_186.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_185.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_186.png" alt=""></figure>
 <p><em>Downsample sonrası: 200 satır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_187.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_187.png" alt=""></figure>
 <p><em>100 - 100</em></p>
 <blockquote><strong>DİKKAT:</strong> Notlarda şu tespit yapılıyor: bu DataFrame için downsample yapmak daha mantıklı gibi. Çünkü upsampling yaparken eldeki dataları <strong>tekrarlama</strong> işlemi yapar (<code>replace=True</code> bu yüzdendir) ve bu çok mantıklı değildir. Yani "verim az" ile "veriyi kopyalıyorum" arasında bir denge kuruyorsunuz.</blockquote>
 <h4>SMOTE: Aynısını değil benzerini üretmek</h4>
 <p>SMOTE, dataların aynısını değil de <strong>benzerini</strong> oluşturan bir algoritmadır. Upsample yaparken daha iyi sonuçlar alabiliyoruz ve endüstride daha çok kullanılır. <code>oversample</code> adında bir obje oluşturulur. Endüstride kullanım biçimi <code>(X, y)</code> şeklindedir: <strong>X = feature'lar, y = target değerleri.</strong> <code>.fit_resample()</code> ilkine feature kolonlarını, ikinciye target kolonunu alır. Feature'ları yazarken <strong>çift parantez</strong> yapmayı unutmayın (Pandas'ta görmüştük).</p>
-<pre># !pip install imblearn<br>from imblearn.over_sampling import SMOTE<br><br>oversample = SMOTE()<br>(X, y) = oversample.fit_resample(df[["feature_1", "feature_2"]], df["target"])<br><br>oversample_df = pd.concat([X, y], axis=1)   # X ve y DataFrame/Series olduğundan birleştirilebilir</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_188.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_189.png" alt=""></figure>
+<pre># !pip install imblearn<br>from imblearn.over_sampling import SMOTE<br>oversample = SMOTE()<br>(X, y) = oversample.fit_resample(df[["feature_1", "feature_2"]], df["target"])<br>oversample_df = pd.concat([X, y], axis=1)   # X ve y DataFrame/Series olduğundan birleştirilebilir</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_188.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_189.png" alt=""></figure>
 <p><em>X: 1800 satır, 2 feature</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_190.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_190.png" alt=""></figure>
 <p><em>y: 1800 hedef değeri</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_191.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_191.png" alt=""></figure>
 <p><em>X ve y'nin concat ile birleştirilmesi</em></p>
 <p>Görsel karşılaştırma: İlk hâlde sarı noktalar (azınlık) az ve dağınıktır; SMOTE sonrasında azınlık sınıfı, mevcut noktalara <strong>benzeyen yeni noktalarla</strong> güçlendirilmiştir.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_192.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_192.png" alt=""></figure>
 <p><em>İlk hali</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_193.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_193.png" alt=""></figure>
 <p><em>SMOTE edilmiş hali</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Her datada farklı işlemler yapılabilir; <strong>bizim karar vermemiz gereken bir durumdur. Hangisi daha iyi sonuç verirse o tercih edilir.</strong> "Dataset dengesiz" demek bile bizim bir şey yapmamız gereken bir işarettir: dengesizliği fark etmek, bir veri bilimcinin sorumluluğudur.</blockquote>
 <h3>7.5 Encoding: Kategorik veriyi sayıya çevirmek</h3>
@@ -713,160 +713,160 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <li><strong>Target (Mean) Encoding</strong> — Kategoriyi, hedef değişkenin o kategorideki ortalaması ile değiştirir. Örn. A ürünü 100 ve 140 sattıysa A için 120 yazılır. — <em>Ne zaman?:</em> Kategorik özelliğin hedef değişkenle güçlü ilişkisi olduğunda.</li>
 <li><strong>Binary Encoding</strong> — Kategorileri ikili (binary) sisteme çevirir (A=00, B=01, C=10, D=11) ve ayrı kolonlara yazar. — <em>Ne zaman?:</em> Çok fazla benzersiz kategori (yüksek kardinalite) varken; One-Hot'a göre daha az kolon kullanır.</li>
 </ul>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_194.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_194.png" alt=""></figure>
 <p><em>One-Hot Encoding (ders slaytı)</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_195.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_195.png" alt=""></figure>
 <p><em>One-Hot sonucu: Color kolonu yerine Red/Blue/Green kolonları</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_196.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_196.png" alt=""></figure>
 <p><em>Label Encoding</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_197.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_197.png" alt=""></figure>
 <p><em>Ordinal Encoding</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_198.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_198.png" alt=""></figure>
 <p><em>Frequency Encoding</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_199.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_199.png" alt=""></figure>
 <p><em>Target (Mean) Encoding</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_200.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_200.png" alt=""></figure>
 <p><em>Binary Encoding</em></p>
 <h4>Uygulama: Titanic üzerinde One-Hot, Label ve Ordinal</h4>
 <p>Önce ilgilendiğimiz kolonlardaki (<code>sex</code>, <code>class</code>, <code>embark_town</code>) eksik satırları <code>dropna(subset=[...])</code> ile siliyoruz (889 satır kalır).</p>
 <pre>df = df.dropna(subset=["embark_town"])<br>df[["sex", "class", "embark_town"]].isna().sum()     # hepsi 0</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_201.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_202.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_201.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_202.png" alt=""></figure>
 <p><em>One-Hot (Pandas ile): pd.get_dummies ile One-Hot Encoding'i doğrudan yapabiliriz, sklearn gerekmez. drop_first=True her kategorik kolonun ilk kategorisini atar (böylece gereksiz kolon üretmez). sex ve embark_town kolonları silinir; yerlerine sex_male, embark_town_Queenstown, embark_town_Southampton kolonları gelir ve değerleri True/False olur.</em></p>
 <pre>df_onehot = pd.get_dummies(df, columns=["sex", "embark_town"], drop_first=True)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_203.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_203.png" alt=""></figure>
 <p><em>get_dummies sonucu</em></p>
 <p><strong>Label Encoder:</strong> Değerleri True/False değil de 1/0 vermek istersek kullanılır. Önce obje oluşturulur, sonra <code>fit_transform()</code> uygulanır. <code>sex</code> kolonunda artık 0 ve 1 olduğu görülür.</p>
-<pre>from sklearn.preprocessing import LabelEncoder<br><br>label_encoder = LabelEncoder()<br>df_label = df.copy()<br>df_label["sex"] = label_encoder.fit_transform(df_label["sex"])</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_204.png" alt=""></figure>
+<pre>from sklearn.preprocessing import LabelEncoder<br>label_encoder = LabelEncoder()<br>df_label = df.copy()<br>df_label["sex"] = label_encoder.fit_transform(df_label["sex"])</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_204.png" alt=""></figure>
 <p><em>LabelEncoder sonucu: sex artık 0/1</em></p>
 <p><strong>Ordinal Encoder:</strong> Sıralamayı biz belirleriz. Üçüncü sınıftan alanlara en düşük olduğu için 0.0, ikinci sınıftakiler için 1.0, birinci sınıftakiler için 2.0 değerini veriyoruz.</p>
-<pre>from sklearn.preprocessing import OrdinalEncoder<br><br>df_ordinal  = df.copy()<br>class_order = ["Third", "Second", "First"]<br>ordinal_encoder = OrdinalEncoder(categories=[class_order])<br>df_ordinal["class"] = ordinal_encoder.fit_transform(df_ordinal[["class"]])</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_205.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_206.png" alt=""></figure>
+<pre>from sklearn.preprocessing import OrdinalEncoder<br>df_ordinal  = df.copy()<br>class_order = ["Third", "Second", "First"]<br>ordinal_encoder = OrdinalEncoder(categories=[class_order])<br>df_ordinal["class"] = ordinal_encoder.fit_transform(df_ordinal[["class"]])</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_205.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_206.png" alt=""></figure>
 <p><em>class kolonu 0.0 / 1.0 / 2.0 oldu</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_207.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_207.png" alt=""></figure>
 <p><em>Eski hali: class = Third / Second / First</em></p>
 <p>İsteğe bağlı olarak üç yöntemin dağılımını yan yana çizip <strong>bilginin kaybolmadığını</strong>, sadece gösterimin değiştiğini doğrulayabilirsiniz:</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_208.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_209.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_208.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_209.png" alt=""></figure>
 <p><em>Orijinal, Label Encoded ve One-Hot Encoded: dağılım aynı</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Gerçek projelerde encoding kararı modele göre değişir; ama akış hep aynıdır: kategorik kolonu tespit et → sıra var mı yok mu, kaç benzersiz değer var diye bak → uygun yöntemi seç → sonucu kontrol et.</blockquote>
 <h2>Bölüm 8 – Gerçek Hayat Projesi: Google Play Store Verisini Temizlemek ve Analiz Etmek</h2>
 <p>Kaggle'dan alınan <strong>Google Play Store Apps</strong> veri setiyle çalışıyoruz. Bu veri seti iki nedenle özellikle seçilmiş: birincisi gerçek bir veri ve çok fazla veri içeriyor; ikincisi <strong>çok temiz bir veri değil</strong> (Kaggle'daki "Usability" skoru 7; daha önce çalışılan veri setlerinin skoru 10 idi). Yani tam olarak iş hayatında karşılaşacağınız türden bir veri.</p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Bu bölümün ana mesajı notlarda şöyle geçiyor: <strong>Pre-Processing (ön işleme) işlemi oldukça uzundur. Yarışmalarda da en önemli kısım data temizliğidir, çünkü gerçek hayatta da temiz datalar gelmeyecek.</strong> Amaç, datayı anlayacak şekle gelene kadar temizlik yapıp EDA'ya hazır hale getirmektir.</blockquote>
 <h3>8.1 İlk bakış</h3>
-<pre>import pandas as pd<br>import numpy as np<br>import seaborn as sns<br>import matplotlib.pyplot as plt<br>%matplotlib inline<br><br>df = pd.read_csv("17-googleplaystore.csv")<br>df.head()<br>df.columns<br>df.shape        # (10841, 13)<br>df.info()<br>df.describe()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_210.png" alt=""></figure>
+<pre>import pandas as pd<br>import numpy as np<br>import seaborn as sns<br>import matplotlib.pyplot as plt<br>%matplotlib inline<br>df = pd.read_csv("17-googleplaystore.csv")<br>df.head()<br>df.columns<br>df.shape        # (10841, 13)<br>df.info()<br>df.describe()</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_210.png" alt=""></figure>
 <p><em>İlk 5 satır</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_211.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_211.png" alt=""></figure>
 <p><em>Kolonlar</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_212.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_212.png" alt=""></figure>
 <p><em>Şekil: 10841 satır, 13 kolon</em></p>
 <p>Bazı kolonlarda çok, bazılarında az null değer var. <code>info()</code> çıktısında <strong>sadece `Rating` kolonu numerik</strong> görünüyor; bu da <code>describe()</code> çıktısında sadece o kolonun gelmesine yol açıyor. Kalan her şey <code>object</code> (metin) tipinde.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_213.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_213.png" alt=""></figure>
 <p><em>info(): yalnızca Rating numerik</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_214.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_214.png" alt=""></figure>
 <p><em>describe(): sadece Rating</em></p>
 <blockquote><strong>DİKKAT:</strong> <code>describe()</code> çıktısında <code>Rating</code> için <strong>max = 19</strong> görünüyor. 1-5 arası puanlanan bir kolonda bu imkânsızdır; bozuk bir satırın habercisidir. Nitekim aşağıda tam bu satırı (10472) bulup çıkaracağız. İlk bakışta "max/min mantıklı mı?" diye sormak çok değerlidir.</blockquote>
 <h3>8.2 Eksik veriler</h3>
 <pre>df.isnull().sum()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_215.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_215.png" alt=""></figure>
 <p><em>Rating: 1474 eksik; Type: 1; Content Rating: 1; Current Ver: 8; Android Ver: 3</em></p>
 <h3>8.3 Reviews: string'ten int'e dönüşüm</h3>
 <p>Null değeri olmayan <code>Reviews</code> kolonunu string'ten int türüne dönüştürmeyi öğreniyoruz. Değerlere baktığımızda string olarak yazıldığı görülüyor. Normalde dönüşüm kodu <code>astype(int)</code>'tir ama kolonda dönüşüme uygun olmayan bir değer olduğundan <strong>hata verir</strong>.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_216.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_216.png" alt=""></figure>
 <p><em>Reviews string olarak tutuluyor</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_217.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_217.png" alt=""></figure>
 <p><em>Doğrudan astype(int) hata verdi</em></p>
 <p>Kaç tanesi çevrilmeye uygun? <code>str.isnumeric()</code> ile bakıyoruz: 10841 satırın <strong>10840'ı</strong> numerik; yani bir tanesi hariç hepsi numerikmiş. Az önceki kod bir satır yüzünden çalışmadı.</p>
-<pre>df['Reviews'].str.isnumeric().sum()        # 10840<br><br>df[~df['Reviews'].str.isnumeric()]         # numerik OLMAYAN satırı göster</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_218.png" alt=""></figure>
+<pre>df['Reviews'].str.isnumeric().sum()        # 10840<br>df[~df['Reviews'].str.isnumeric()]         # numerik OLMAYAN satırı göster</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_218.png" alt=""></figure>
 <blockquote><strong>MÜLAKAT / TEST İPUCU:</strong> <code>df[df["Reviews"].str.isnumeric()]</code> (<code>.sum()</code> olmadan) numerik olan 10840 satırı gösterir. <strong>Başına bir tilda (`~`) koyarsanız numerik olmayan değerleri gösterir.</strong> Notlarda "süper bir olaydır, unutma" diye vurgulanmış: veri temizlemede aykırı satırı avlamanın en hızlı yolu budur.</blockquote>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_219.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_219.png" alt=""></figure>
 <p><em>Sorunlu satır: 10472 (kolonlar kaymış)</em></p>
 <p>Görüldüğü üzere <strong>10472. satır</strong> bizim işimizi bozuyor; kolonlar bir hücre kaymış, bu yüzden <code>Reviews</code> kolonunda "3.0M" gibi bir değer var. Bunu çıkartacağız. Orijinal veriyi bozmamak için önce <strong>kopyasını</strong> alıp (<code>df_clean</code>) onun üzerinde çalışıyoruz.</p>
-<pre>df_clean = df.copy()<br>df_clean = df_clean.drop(df_clean.index[10472])<br><br>df_clean['Reviews'].str.isnumeric().sum()     # 10840 (artık hepsi)<br>df_clean['Reviews'] = df_clean['Reviews'].astype(int)<br>df_clean.info()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_220.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_221.png" alt=""></figure>
+<pre>df_clean = df.copy()<br>df_clean = df_clean.drop(df_clean.index[10472])<br>df_clean['Reviews'].str.isnumeric().sum()     # 10840 (artık hepsi)<br>df_clean['Reviews'] = df_clean['Reviews'].astype(int)<br>df_clean.info()</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_220.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_221.png" alt=""></figure>
 <p><em>Satır silindi</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_222.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_222.png" alt=""></figure>
 <p><em>Reviews artık int32</em></p>
 <blockquote><strong>SEKTÖR NOTU:</strong> Ham veriyi asla doğrudan bozmayın: <code>df.copy()</code> ile çalışma kopyası oluşturmak (notlardaki <code>df_clean</code>), bir şeyi yanlış yaptığınızda başa dönebilmenizi sağlar. Ayrıca sorunlu satırı <strong>bulup nedenini anlayıp</strong> çıkarmak, "körlemesine dropna" yapmaktan çok daha güvenlidir.</blockquote>
 <h3>8.4 Size: "19M", "201k", "Varies with device"</h3>
 <p>Şimdi boyut incelemesi yapalım. Çok fazla farklı değer var ve biz bunu numerik hale çevirmek istiyoruz. Notlardaki mantık: <strong>Megabyte olanları 1000 ile çarpacağız, kilobyte olanlara dokunmayacağız.</strong> Yani <code>M</code> olan yerlerde <code>M</code>'yi kaldırıp 1000 ile çarpacağız; <code>k</code> olanlarda sadece <code>k</code>'yi kaldıracağız. Ayrıca <code>"Varies with device"</code> gibi sayıya çevrilemeyen değerleri <code>NaN</code> yapıyoruz.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_223.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_223.png" alt=""></figure>
 <p><em>Size benzersiz değerleri: 19M, 14M, 8.7M, 201k...</em></p>
 <pre>df_clean['Size'] = df_clean['Size'].str.replace("M", "000")<br>df_clean['Size'] = df_clean['Size'].str.replace("k", "")<br>df_clean['Size'] = df_clean['Size'].replace("Varies with device", np.nan)<br>df_clean['Size'] = df_clean['Size'].astype(float)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_224.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_224.png" alt=""></figure>
 <p><em>M -&gt; 000 ve k -&gt; boş</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_225.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_225.png" alt=""></figure>
 <p><em>Varies with device -&gt; NaN</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_226.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_227.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_226.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_227.png" alt=""></figure>
 <p><em>astype(float)</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_228.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_228.png" alt=""></figure>
 <p><em>Size artık float64</em></p>
 <blockquote><strong>DİKKAT:</strong> <strong>Bu yöntemin bir zayıf noktası var.</strong> <code>"8.7M"</code> değeri <code>replace("M","000")</code> ile <code>"8.7000"</code> olur ve float'a çevrilince <strong>8.7</strong> çıkar (8700 değil). Sadece tam sayılı MB değerleri (<code>19M</code> → 19000) doğru döner. Nitekim sonraki <code>describe()</code> çıktısında <code>Size</code> kolonunun %25'lik değeri 5.6 gibi küçük bir sayı çıkıyor; bu, ondalıklı MB değerlerinin KB'a çevrilemediğinin işaretidir.</blockquote>
 <blockquote>Notlardaki niyeti (M ise ×1000, k ise olduğu gibi) doğru uygulayan alternatif:</blockquote>
-<pre>def size_to_kb(s):<br>    if s.endswith("M"):<br>        return float(s[:-1]) * 1000<br>    if s.endswith("k"):<br>        return float(s[:-1])<br>    return np.nan            # "Varies with device"<br><br>df_clean["Size"] = df["Size"].drop(10472).apply(size_to_kb)   # ham kolondan üretmek gerekir</pre>
+<pre>def size_to_kb(s):<br>    if s.endswith("M"):<br>        return float(s[:-1]) * 1000<br>    if s.endswith("k"):<br>        return float(s[:-1])<br>    return np.nan            # "Varies with device"<br>df_clean["Size"] = df["Size"].drop(10472).apply(size_to_kb)   # ham kolondan üretmek gerekir</pre>
 <h3>8.5 Installs ve Price: +, virgül ve $ işaretlerini temizlemek</h3>
 <p>Silme işlemlerine devam ediyoruz: <code>Installs</code> kolonundan <code>,</code> ve <code>+</code> karakterlerini, <code>Price</code> kolonundan <code>$</code> işaretini sileceğiz.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_229.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_229.png" alt=""></figure>
 <p><em>Installs değerleri: 10,000+ / 1,000,000+ ...</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_230.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_230.png" alt=""></figure>
 <p><em>Price değerleri: $4.99 ...</em></p>
 <p>Aynı anda silebiliriz. Notlarda "bu yazdığımız koda iyi bak, başka kodlarda karşına çıkabilir" deniyor: temizlenecek karakterlerin ve temizlenecek kolonların listesini tutup iç içe iki döngüyle hepsini tek seferde temizliyoruz.</p>
-<pre>chars_to_remove = ["+", ",", "$"]<br>chars_to_clean  = ["Installs", "Price"]<br><br>for item in chars_to_remove:<br>    for cols in chars_to_clean:<br>        df_clean[cols] = df_clean[cols].str.replace(item, "")<br><br>df_clean['Installs'] = df_clean['Installs'].astype(int)<br>df_clean['Price']    = df_clean['Price'].astype(float)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_231.png" alt=""></figure>
+<pre>chars_to_remove = ["+", ",", "$"]<br>chars_to_clean  = ["Installs", "Price"]<br>for item in chars_to_remove:<br>    for cols in chars_to_clean:<br>        df_clean[cols] = df_clean[cols].str.replace(item, "")<br>df_clean['Installs'] = df_clean['Installs'].astype(int)<br>df_clean['Price']    = df_clean['Price'].astype(float)</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_231.png" alt=""></figure>
 <p><em>Notlardaki döngü</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_232.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_233.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_234.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_232.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_233.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_234.png" alt=""></figure>
 <p><em>Son hamle: astype(int) ve astype(float)</em></p>
 <blockquote><strong>DİKKAT:</strong> Notlardaki ekran görüntüsünde silinecek karakter listesi <code>["+","-","$"]</code> şeklinde görünüyor, ama <code>astype(int)</code> çalışabilsin diye <strong>virgülün de silinmesi şarttır</strong> (<code>10,000</code> sayıya çevrilemez). Yukarıdaki kodda listeyi bu yüzden <code>["+", ",", "$"]</code> yazdım.</blockquote>
 <p>Artık daha mantıklı sonuçlar almaya başladık; çok temizlik yaptık ama temizliğe devam edeceğiz.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_235.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_235.png" alt=""></figure>
 <p><em>info(): Reviews, Installs int; Size, Price float</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_236.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_236.png" alt=""></figure>
 <p><em>describe(): sayısal kolonlar artık özetleniyor</em></p>
 <h3>8.6 Tarih kolonları</h3>
 <p>Date (tarih) kolonlarına bakıyoruz; karşımıza çok çıkacak bir konudur. <code>Last Updated</code> kolonunda boş veri yok (10840), ama tarihler <strong>string (metin) olarak girilmiş</strong>. Tarihin karşımıza metin olarak gelmesi bilinen bir durumdur. Gerçekten tarih olarak kaydetmek için <code>pd.to_datetime</code> kullanılır. Bu işlemi yaptıktan sonra <code>.dt</code> ile gün/ay/yıl bilgisini ayrı kolonlar olarak çıkarabiliriz (<strong>bu işlemi ancak çevirdikten sonra yapabilirsiniz</strong>).</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_237.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_237.png" alt=""></figure>
 <p><em>Tarihler metin olarak geliyor</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_238.png" alt=""></figure>
-<pre>df_clean['Last Updated'] = pd.to_datetime(df_clean['Last Updated'])<br><br>df_clean['Day']   = df_clean['Last Updated'].dt.day<br>df_clean['Month'] = df_clean['Last Updated'].dt.month<br>df_clean['Year']  = df_clean['Last Updated'].dt.year</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_239.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_238.png" alt=""></figure>
+<pre>df_clean['Last Updated'] = pd.to_datetime(df_clean['Last Updated'])<br>df_clean['Day']   = df_clean['Last Updated'].dt.day<br>df_clean['Month'] = df_clean['Last Updated'].dt.month<br>df_clean['Year']  = df_clean['Last Updated'].dt.year</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_239.png" alt=""></figure>
 <p><em>pd.to_datetime sonrası</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_240.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_240.png" alt=""></figure>
 <p><em>Day / Month / Year kolonları eklendi</em></p>
 <p>Bu veri setinde pek işimize yaramasa da başka veri setlerinde oldukça işimize yarayabilir; örneğin <strong>yıla göre filtreleme</strong> yapmak isteyebiliriz.</p>
 <h3>8.7 Duplicate (tekrarlayan) kayıtlar</h3>
 <p>Numerik ve kategorik veriler ayrıldığından artık duplicate veri var mı ona bakıyoruz. <code>duplicated()</code> True/False döndürür; tüm satırların gelmesini istersek bunu DataFrame'in köşeli parantezine koyarız. <code>drop_duplicates</code> ile temizleriz: <code>keep="first"</code> "hangisini tut" demektir; ilkini tutmak istiyoruz (zaten default değeri budur).</p>
-<pre>df_clean["App"].duplicated()                       # True/False<br>df_clean[df_clean["App"].duplicated()]             # tekrar eden satırların kendisi<br>df_clean[df_clean["App"].duplicated()].shape       # (1181, 16)<br><br>df_clean = df_clean.drop_duplicates(subset=['App'], keep='first')<br>df_clean.shape                                     # (9659, 16)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_241.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_242.png" alt=""></figure>
+<pre>df_clean["App"].duplicated()                       # True/False<br>df_clean[df_clean["App"].duplicated()]             # tekrar eden satırların kendisi<br>df_clean[df_clean["App"].duplicated()].shape       # (1181, 16)<br>df_clean = df_clean.drop_duplicates(subset=['App'], keep='first')<br>df_clean.shape                                     # (9659, 16)</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_241.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_242.png" alt=""></figure>
 <p><em>Tekrar eden uygulamalar</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_243.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_243.png" alt=""></figure>
 <p><em>1181 tekrar eden kayıt</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_244.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_244.png" alt=""></figure>
 <p><em>drop_duplicates</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_245.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_245.png" alt=""></figure>
 <p><em>App kolonunda non-null değerleri azaldı</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_246.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_246.png" alt=""></figure>
 <p><em>Kolon sayısı day/month/year yüzünden 3 arttı: 16</em></p>
 <h3>8.8 Numerik ve kategorik kolonları ayırıp dağılımlara bakmak</h3>
 <p>Kategorik olanları kategorik tuttuk, yüksek oranda numerik olanları numeriğe çevirdik. En azından EDA yapmaya hazır hale geldik. Şimdi numerikleştirdiğimiz ve numerikleştirmediğimiz kolonları ayrı listelere alıyoruz (bu kod farklı veri setlerinde de kullanılıyor, aklınızda bulunsun):</p>
 <pre>numeric_features     = [feature for feature in df_clean.columns if df_clean[feature].dtype != 'O']<br>categorical_features = [feature for feature in df_clean.columns if df_clean[feature].dtype == 'O']</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_247.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_247.png" alt=""></figure>
 <p><em>Numerik: Rating, Reviews, Size, Installs, Price, Last Updated, Day, Month, Year</em></p>
 <p>Numerik feature'ların KDE grafiklerini çizmek için bir döngü kurulur: <code>plt.subplot(5, 3, i+1)</code> (5 satır 3 kolon; indeks 0'dan başladığı için <code>i+1</code>), <code>sns.kdeplot(x=df_clean[numeric_features[i]], color="b")</code>, <code>plt.xlabel(...)</code> ile eksen adı, <code>plt.tight_layout()</code> ile sıkıştırma.</p>
 <pre>plt.figure(figsize=(15, 10))<br>for i in range(0, len(numeric_features)):     # 9 grafik<br>    plt.subplot(5, 3, i + 1)<br>    sns.kdeplot(x=df_clean[numeric_features[i]], color='b')<br>    plt.xlabel(numeric_features[i])<br>    plt.tight_layout()<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_248.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_248.png" alt=""></figure>
 <p><em>Numerik feature'ların dağılımları</em></p>
 <p>Kategoriklerde bar grafikleri çizdirebiliriz. Sadece 2 kolon için uygulandı (<code>Type</code>, <code>Content Rating</code>), çünkü <code>Genres</code> sütunundaki değerler epey fazlaydı.</p>
 <pre>category = ["Type", "Content Rating"]<br>plt.figure(figsize=(15, 5))<br>for i in range(0, len(category)):<br>    plt.subplot(1, 2, i + 1)<br>    sns.countplot(x=df_clean[category[i]], color='b')<br>    plt.xlabel(category[i])<br>    plt.tight_layout()<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_249.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_249.png" alt=""></figure>
 <p><em>Ücretsiz uygulamalar ağırlıkta; içerik derecelendirmesinde "Everyone" baskın</em></p>
 <h3>8.9 Mülakat soruları ve çözümleri</h3>
 <blockquote><strong>MÜLAKAT / TEST İPUCU:</strong> Bu bölüm notlarda doğrudan <strong>"Mülakat Soruları"</strong> başlığıyla verilmiş. Sırasıyla çözümlerini görelim; her biri gerçek bir case çalışmasında sorulabilecek türden.</blockquote>
@@ -874,72 +874,72 @@ blockquote{border-left:3px solid #242424;margin:20px 0;padding-left:16px}code{ba
 <p>Yukarıdaki 8.3-8.8 adımlarının tamamı bu sorunun cevabıdır: string → int/float dönüşümleri, tarih dönüşümü, tekrarlayanların temizlenmesi, numerik feature'lar için KDE, kategorik feature'lar için countplot.</p>
 <h4>Soru 2 – Kategorilerde en çok app'ler hangi kategorilerde?</h4>
 <pre>df_clean["Category"].value_counts()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_250.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_250.png" alt=""></figure>
 <p><em>FAMILY 1832, GAME 959, TOOLS 827, BUSINESS 420 ...</em></p>
 <h4>Soru 3 (zor) – Kategorilerde kaç uygulama var, peki "install" bazında en çok hangisi indiriliyor?</h4>
 <p>Bunun için <strong>gruplama</strong> yapmalıyız: <code>groupby</code>. Toplama işlemi yapacağımızdan <code>sum()</code> kullanılır. Büyükten küçüğe sıralama için <code>sort_values(ascending=False)</code> (default True: küçükten büyüğe). Değerlere yeniden 0'dan indeks atamak için <code>reset_index()</code>.</p>
-<pre>df_clean.groupby(['Category'])["Installs"].sum()<br>df_clean.groupby(['Category'])["Installs"].sum().sort_values(ascending=False)<br><br>df_cat_installs = (df_clean.groupby(['Category'])["Installs"].sum()<br>                   .sort_values(ascending=False).reset_index())</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_251.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_252.png" alt=""></figure>
+<pre>df_clean.groupby(['Category'])["Installs"].sum()<br>df_clean.groupby(['Category'])["Installs"].sum().sort_values(ascending=False)<br>df_cat_installs = (df_clean.groupby(['Category'])["Installs"].sum()<br>                   .sort_values(ascending=False).reset_index())</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_251.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_252.png" alt=""></figure>
 <p><em>En çok indirilen kategoriler: GAME, COMMUNICATION, TOOLS...</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_253.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_253.png" alt=""></figure>
 <p><em>reset_index() ile DataFrame'e çevrildi</em></p>
 <p>Rakamlar çok büyük olduğundan hepsini bölebilirsiniz; grafikleri daha iyi okumak ve karşılaştırma yapmak adına bölme işlemi faydalı olabilir (burada 1.000.000'a):</p>
 <pre>df_cat_installs['Installs'] = df_cat_installs['Installs'] / 1000000</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_254.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_254.png" alt=""></figure>
 <p><em>Bölme sonrası (dikkat: aşağıdaki uyarıya bakın)</em></p>
 <blockquote><strong>DİKKAT:</strong> Notlardaki çıktıda değerler <code>1.387892e-42</code> gibi absürt küçük sayılara dönmüş. Sebep: <strong>bölme hücresi birden fazla kez çalıştırılmış</strong> ve her seferinde değer tekrar 1.000.000'a bölünmüş. Notebook'ta bu tür "kendini tekrar eden" hücrelere dikkat edin; emin değilseniz hücreyi baştan (veriyi yeniden oluşturarak) çalıştırın. Aşağıdaki grafik de bu yüzden eksende <code>1e-42</code> gösteriyor; sıralama ve oran doğru olsa da ölçek anlamsızdır.</blockquote>
 <h4>Soru 4 – Kategorilerde en çok indirilenlerin ilk 10'unu al, grafiğe koy</h4>
 <pre>df2 = df_cat_installs.head(10)<br>plt.figure(figsize=(10, 5))<br>sns.barplot(x="Installs", y="Category", data=df2)<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_255.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_255.png" alt=""></figure>
 <p><em>İlk 10 kategori</em></p>
 <h4>Soru 5 (zor) – Kategoriler içinde en yüksek 5 App'i al, göster, çizdir</h4>
 <p>Önce kategori + app bazında <code>Installs</code> toplamını alıp büyükten küçüğe sıralıyoruz. Sonra bir kategori listesi üzerinde döngü kuruyoruz; her kategori için o kategorinin satırlarını filtreleyip <code>head(5)</code> ile ilk 5 app'i alıyoruz. Çizdirmek için 5 kategori olduğundan 3 satır 2 kolonluk bir ızgara belirliyoruz; <code>i + 1</code> boşluk çıkmaması içindir, <code>tight_layout()</code> sıkışık gözükmesi içindir, <code>figsize=(40, 30)</code> çıkan grafiğin genişlik (x) ve yükseklik (y) değerleridir.</p>
-<pre>df_app_category = (df_clean.groupby(['Category', 'App'])['Installs'].sum()<br>                   .reset_index())<br>df_app_category = df_app_category.sort_values('Installs', ascending=False)<br><br>apps = ["GAME", "COMMUNICATION", "TOOLS", "PRODUCTIVITY", "SOCIAL"]<br>plt.figure(figsize=(40, 30))<br>for i, app in enumerate(apps):<br>    df2 = df_app_category[df_app_category['Category'] == app]<br>    df2 = df2.head(5)<br>    plt.subplot(3, 2, i + 1)<br>    sns.barplot(data=df2, x="Installs", y="App")<br>    plt.title(app, size=20)<br>plt.tight_layout()<br>plt.show()</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_256.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_257.png" alt=""></figure>
+<pre>df_app_category = (df_clean.groupby(['Category', 'App'])['Installs'].sum()<br>                   .reset_index())<br>df_app_category = df_app_category.sort_values('Installs', ascending=False)<br>apps = ["GAME", "COMMUNICATION", "TOOLS", "PRODUCTIVITY", "SOCIAL"]<br>plt.figure(figsize=(40, 30))<br>for i, app in enumerate(apps):<br>    df2 = df_app_category[df_app_category['Category'] == app]<br>    df2 = df2.head(5)<br>    plt.subplot(3, 2, i + 1)<br>    sns.barplot(data=df2, x="Installs", y="App")<br>    plt.title(app, size=20)<br>plt.tight_layout()<br>plt.show()</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_256.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_257.png" alt=""></figure>
 <p><em>Döngü kodu</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_258.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_258.png" alt=""></figure>
 <p><em>Her kategorinin en çok indirilen 5 uygulaması</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_259.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_259.png" alt=""></figure>
 <h4>Soru 6 – 5 rating'li app'leri hem kategoriye hem install sayısına göre sırala</h4>
-<pre>rating_df = (df_clean.groupby(['Category', 'Installs', 'App'])['Rating'].sum()<br>             .sort_values(ascending=False).reset_index())<br><br>top_rated_apps = rating_df[rating_df['Rating'] == 5.0]   # Rating'i 5 olanları getir<br>top_rated_apps.shape      # (271, 4)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_260.png" alt=""></figure>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_261.png" alt=""></figure>
+<pre>rating_df = (df_clean.groupby(['Category', 'Installs', 'App'])['Rating'].sum()<br>             .sort_values(ascending=False).reset_index())<br>top_rated_apps = rating_df[rating_df['Rating'] == 5.0]   # Rating'i 5 olanları getir<br>top_rated_apps.shape      # (271, 4)</pre>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_260.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_261.png" alt=""></figure>
 <p><em>5.0 puanlı uygulamalar</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_262.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_262.png" alt=""></figure>
 <p><em>271 satır, 4 kolon</em></p>
 <h3>8.10 Android sürümü (Android Ver) temizliği</h3>
 <p>Versiyon temizliğine geçiyoruz. <code>Android Ver</code> kolonu "4.0.3 and up", "Varies with device" gibi değerler içeriyor. <code>regex=True</code> "and up" geçen her yerde bu işlemi yap demektir: yani "and up" varsa yerine boşluk koyacağız.</p>
 <pre>df_clean['Android Ver'] = df_clean['Android Ver'].replace('and up', '', regex=True)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_263.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_263.png" alt=""></figure>
 <p><em>Önce: "4.0.3 and up"</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_264.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_264.png" alt=""></figure>
 <p><em>Sonra: "4.0.3"</em></p>
 <p>Tüm değişiklikleri <strong>tek kodda art arda</strong> (zincirleme) yazabiliriz: <code>Varies with device</code> ifadesi temizlenip boş değerler <code>NaN</code> yapılıyor. Geriye içinde <strong>-</strong> (tire) olan ifadeler ("4.0.3 - 7.1.1" gibi) kalıyor. Bunları da temizlersek işimiz bitiyor; tireli ifadelerin sayısı az (7 satır) olduğu için <strong>sileceğiz</strong>.</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_265.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_265.png" alt=""></figure>
 <p><em>Zincirleme replace ve kalan değerler</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_266.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_266.png" alt=""></figure>
 <p><em>Tireli (aralık) değerlerin sayısı çok az</em></p>
 <pre>df_clean[df_clean['Android Ver'].str.contains('-') == True]     # tireli satırlar<br>df_clean = df_clean[df_clean['Android Ver'].str.contains('-') == False]<br>df_clean.shape       # (8658, 16)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_267.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_267.png" alt=""></figure>
 <p><em>Tireli satırlar</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_268.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_268.png" alt=""></figure>
 <p><em>Silindikten sonra şekil: (8658, 16)</em></p>
 <blockquote><strong>DİKKAT:</strong> 9659 satırdan 8658'e düşüldü; oysa tireli satır sayısı yalnızca 7. Aradaki fark, <code>NaN</code> değerlerde <code>str.contains("-")</code> sonucunun <code>NaN</code> olması ve <code>== False</code> filtresinin bunları da dışarıda bırakmasından kaynaklanıyor olabilir. <strong>Bir filtreden sonra `shape` kontrolü yapmak</strong>, beklenmedik veri kaybını yakalamanın en ucuz yoludur.</blockquote>
 <p>En temiz hali aşağıdaki gibidir:</p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_269.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_269.png" alt=""></figure>
 <p><em>Android Ver: temiz sürüm değerleri</em></p>
 <h3>8.11 Mean (Target) Encoding: Genres kolonuna uygulamalı örnek</h3>
 <p>Şimdi yapacağımız encoding işlemi bir işe yaramayacak ama nasıl yapıldığını görmek iyi olabilir. <code>Genres</code> kolonuna <strong>Mean (Target) Encoding</strong> yapacağız. <code>Genres</code> kolonunda çok fazla değer olduğundan grafik çizilemez, çok bir şey yapılamaz. Bu yüzden Genres'lar yerine o Genre'nin <strong>Installs ortalamasını</strong> koyacağız.</p>
 <pre>mean_genres_installs = df_clean.groupby(['Genres'])['Installs'].mean() / 1000000</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_270.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_270.png" alt=""></figure>
 <p><em>117 benzersiz Genre ve ortalama install değerleri</em></p>
 <p>Bu değerleri doğrudan <code>Genres Encoded</code> kolonuna koymak istersek <strong>hata alırız</strong>: <code>mean_genres_installs</code> içinde 117 kayıt varken bizim oluşturmak istediğimiz kolonda 8000-9000 satır var; hangi satıra hangi değerin denk geleceğini bilemez. Bunu bilmesi için <strong>sözlük (dictionary)</strong> oluşturulur ve <code>map</code> ile satır satır eşleştirilir:</p>
 <pre>mean_genres_installs = mean_genres_installs.to_dict()<br>df_clean['Genres Encoded'] = df_clean['Genres'].map(mean_genres_installs)</pre>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_271.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_271.png" alt=""></figure>
 <p><em>Sözlük hali</em></p>
-<figure><img src="https://raw.githubusercontent.com/Yigitbekiroglu07/DataScienceNotes/main/image_272.png" alt=""></figure>
+<figure><img src="https://yigitbekiroglu07.github.io/DataScienceNotes/image_272.png" alt=""></figure>
 <p><em>map ile yeni kolon</em></p>
 <blockquote><strong>DİKKAT:</strong> Ekran görüntüsündeki kırmızı <code>SettingWithCopyWarning</code> bir hata değil, uyarıdır; kolon başarıyla eklenmiştir. <code>df_clean</code> daha önce filtrelenmiş bir dilimden (slice) türediği için Pandas "bir kopya üzerinde değer atıyor olabilirsin" diye uyarır. Filtreden sonra <code>.copy()</code> kullanmak bu uyarıyı önler.</blockquote>
 <blockquote><strong>ÖZET:</strong> Notlarda bu kısım şöyle kapatılıyor: <strong>burada yaptığımız işlem ekstra bir sonuç çıkarmak için faydalı değildir; yarın bir gün encoding karşımıza çıkarsa elimizde bulunması amaçlı yapılmıştır.</strong> Öğrendiklerinizin hepsi, yarın bir gün ihtiyacınız olduğunda bakabilmeniz için vardır.</blockquote>
